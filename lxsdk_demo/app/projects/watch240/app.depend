@@ -1,0 +1,3527 @@
+# depslib dependency file v1.0
+1750834310 source:h:\zzp\ab5691_sdk\ute\application\ute_application_common.c
+	"include.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_message.h"
+	"ute_module_call.h"
+	"include.h"
+	"ute_drv_motor.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_module_notify.h"
+	"ute_module_notdisturb.h"
+	"ute_module_weather.h"
+	"ute_module_heart.h"
+	"ute_module_bloodoxygen.h"
+	"ute_drv_battery_common.h"
+	"ute_module_sleep.h"
+	"ute_module_sport.h"
+	"ute_module_findphone.h"
+	"ute_module_liftwrist.h"
+	"ute_drv_temperature_common.h"
+	"ute_module_factorytest.h"
+	"ute_module_music.h"
+	"ute_module_gui_common.h"
+	"ute_module_newFactoryTest.h"
+	"ute_module_localRingtone.h"
+	"ecig.h"
+	"ute_drv_keys_common.h"
+	"ute_module_bloodpressure.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_breathrate.h"
+	"ute_module_screens_common.h"
+	"ute_task_gui.h"
+	"ute_module_call.h"
+	"ute_module_ota.h"
+	"ute_module_stopwatch.h"
+	"ute_module_breathtraining.h"
+	"ute_module_countdown.h"
+	"ute_module_temperature.h"
+	"ute_module_emotionPressure.h"
+	"UTEsecurityCode.h"
+	"ute_picture_font_common.h"
+	"ute_module_lockScreen.h"
+	"ute_module_game.h"
+	"ute_module_calculator.h"
+	"ute_module_earphone.h"
+	"ute_module_quickReply.h"
+	"ute_module_gui_string.h"
+	"ute_module_ecg.h"
+	"ute_module_simplify_wechat_protocol.h"
+	"ute_module_micrecord.h"
+	"ute_module_earphone.h"
+	"ute_module_aliUpay.h"
+	"ute_module_drinkwater.h"
+	"ute_module_ship_mode.h"
+	"ute_module_lockWatchDial.h"
+	"ute_module_components.h"
+	"ute_drv_tp_common.h"
+	"ute_module_gpio_exception_wakeup_handler.h"
+	"ute_module_exhibition.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\header\include.h
+	"global.h"
+	"xcfg.h"
+	"config.h"
+	"io_def.h"
+	"api.h"
+	"bsp.h"
+	"gui.h"
+	"func.h"
+	"lang.h"
+	"plugin.h"
+	"res.h"
+	"ui.h"
+	"ui_external.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\header\global.h
+	<stddef.h>
+	<stdarg.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	"typedef.h"
+	"macro.h"
+	"clib.h"
+	"sfr.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\header\typedef.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\header\macro.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\header\clib.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\header\sfr.h
+
+1750924948 h:\zzp\ab5691_sdk\app\projects\watch240\xcfg.h
+
+1751938176 h:\zzp\ab5691_sdk\app\projects\watch240\config.h
+	"ute_project_config.h"
+	"config_define.h"
+	"ute_flash_map_common.h"
+	"config_extra.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config.h
+	"ute_project_config_ab281.h"
+	"ute_project_config_ab281a.h"
+	"ute_project_config_ab281b.h"
+	"ute_project_config_ab281c.h"
+	"ute_project_config_abe012.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281.h
+
+1750834310 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281a.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281ab.h
+
+1750834310 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281b.h
+
+1750834310 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281c.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281d.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281ac.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281da.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281db.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281e.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281f.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281ea.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281g.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281j.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281h.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281k.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281l.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281m.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281n.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281dc.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281ga.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281fa.h
+
+1750404598 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_ab281ad.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\header\config_define.h
+	"config_define.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\flashmap\ute_flash_map_common.h
+	"ute_project_config.h"
+	"ute_flash_64mbit_1024k_map.h"
+	"ute_flash_64mbit_1280k_map.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\flashmap\ute_flash_64mbit_1024k_map.h
+
+1750404597 h:\zzp\ab5691_sdk\ute\flashmap\ute_flash_128mbit_1280k_map.h
+
+1750834310 h:\zzp\ab5691_sdk\ute\flashmap\ute_flash_64mbit_1280k_map.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\header\config_extra.h
+	"ute_project_config.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\header\io_def.h
+	"global.h"
+	"config.h"
+	"sfr.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api.h
+	"api_math.h"
+	"api_btstack.h"
+	"api_cm.h"
+	"api_music.h"
+	"api_rtc.h"
+	"api_sdadc.h"
+	"api_update.h"
+	"api_dac.h"
+	"api_sysclk.h"
+	"api_msg.h"
+	"api_saradc.h"
+	"api_sys.h"
+	"api_pwr.h"
+	"api_key.h"
+	"api_gpio.h"
+	"api_uart.h"
+	"api_nr.h"
+	"api_gui.h"
+	"api_charge.h"
+	"api_mem.h"
+	"api_flash.h"
+	"api_app.h"
+	"api_co_time.h"
+	"api_sd.h"
+	"api_usb.h"
+	"api_fs.h"
+	"api_device.h"
+	"api_modem.h"
+	"api_db.h"
+	"api_jpeg.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_math.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_btstack.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_cm.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_music.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_rtc.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_sdadc.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_update.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_dac.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_sysclk.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_msg.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_saradc.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_sys.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_pwr.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_key.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_gpio.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_uart.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_nr.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_gui.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_charge.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_mem.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_flash.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_app.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_co_time.h
+	"include.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_sd.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_usb.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_fs.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_device.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\libs\api_modem.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_db.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_jpeg.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\libs\rt_thread.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_rt_thread.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp.h
+	"bsp_halt.h"
+	"bsp_sys.h"
+	"bsp_hw_timer.h"
+	"bsp_pwm.h"
+	"bsp_key.h"
+	"bsp_dac.h"
+	"bsp_param.h"
+	"bsp_audio.h"
+	"bsp_music.h"
+	"bsp_bt.h"
+	"bsp_eq.h"
+	"bsp_piano.h"
+	"bsp_i2c.h"
+	"bsp_ble.h"
+	"bsp_app.h"
+	"bsp_charge.h"
+	"bsp_saradc.h"
+	"bsp_vbat.h"
+	"bsp_rtc.h"
+	"bsp_sensor.h"
+	"bsp_port_int.h"
+	"bsp_sleep.h"
+	"bsp_vusb.h"
+	"bsp_uitool_phrase.h"
+	"bsp_modem.h"
+	"bsp_opus.h"
+	"bsp_call_mgr.h"
+	"bsp_spi1flash.h"
+	"bsp_ecig.h"
+	"ecig.h"
+	"bsp_ecig_polling_algrithm.h"
+	"bsp_ecig_switch_algrithm.h"
+	"bsp_gpio.h"
+	"bsp_charge_ex.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_halt.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sys.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_hw_timer.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_pwm.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_key.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_dac.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_param.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_audio.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_music.h
+	"bsp_record.h"
+	"bsp_fs.h"
+	"music_lrc.h"
+	"music_id3_tag.h"
+	"music_res.h"
+	"bsp_func_music.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_record.h
+	"record_file.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\record_file.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_fs.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_lrc.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_id3_tag.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_res.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_func_music.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bsp_bt.h
+	"pbap.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\pbap.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_eq.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_piano.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_i2c.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bsp_ble.h
+	"app.h"
+	"ble.h"
+	"bsp_ams.h"
+	"bsp_ancs.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app.h
+	"app_ab_link.h"
+	"app_watch.h"
+	"bt_fota.h"
+	"bsp_app.h"
+	"bsp_ble/hid/ble_hid_service.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app_ab_link.h
+	"include.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app_watch.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bt_fota.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\bsp_app.h
+	"app_platform.h"
+	"app_ancs.h"
+	"ab_command/ab_common.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\app_platform.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\app_ancs.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\ab_common.h
+	"app_data.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\app_data.h
+	"app_data_config.h"
+	"app_data.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\app_data_config.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\hid\ble_hid_service.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\ble.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bsp_ams.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bsp_ancs.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_saradc.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_vbat.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_rtc.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\bsp_sensor.h
+	"sc7a20/sc7a20.h"
+	"hrs3300/fit_hrs3300.h"
+	"hx3605/fit_hx3605.h"
+	"msa310/msa310.h"
+	"vc30fx_user_app.h"
+	"internal_sensor/bsp_internal_sensor.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\sc7a20\sc7a20.h
+	"sl_watch_application.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\sc7a20\sl_watch_application.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hrs3300\fit_hrs3300.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\fit_hx3605.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\msa310\msa310.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_user_app.h
+	"include.h"
+	"vcare_device_com.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vcare_device_com.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\internal_sensor\bsp_internal_sensor.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vchr11hci.h
+	<stdint.h>
+	<stdbool.h>
+	"algo.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\algo.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_port_int.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sleep.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_vusb.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_uitool_phrase.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\bsp_modem.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_opus.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_call_mgr.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_spi1flash.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_vddhr_trim.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\gui.h
+	"components.h"
+	"tft.h"
+	"ctp.h"
+
+1751938161 h:\zzp\ab5691_sdk\app\platform\gui\components\components.h
+	"component_func.h"
+	"compo_form.h"
+	"compo_picturebox.h"
+	"compo_textbox.h"
+	"compo_label.h"
+	"compo_shape.h"
+	"compo_button.h"
+	"compo_number.h"
+	"compo_datetime.h"
+	"compo_qrcodebox.h"
+	"compo_listbox.h"
+	"compo_rowbox.h"
+	"compo_stacklist.h"
+	"compo_iconlist.h"
+	"compo_rotary.h"
+	"compo_football.h"
+	"compo_cube.h"
+	"compo_disklist.h"
+	"compo_kaleidoscope.h"
+	"compo_animation.h"
+	"compo_rings.h"
+	"compo_arc.h"
+	"compo_chartbox.h"
+	"compo_cardbox.h"
+	"compo_move_ctr.h"
+	"compo_butterfly.h"
+	"compo_scrollbar.h"
+	"compo_progressbar.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\component_func.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_form.h
+	"compo_animation.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_picturebox.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_textbox.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_label.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_shape.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_button.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_number.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_datetime.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_qrcodebox.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_listbox.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rowbox.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_stacklist.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_iconlist.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rotary.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_football.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_cube.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_disklist.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_kaleidoscope.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_animation.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rings.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_arc.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_chartbox.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_cardbox.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_move_ctr.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_butterfly.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_scrollbar.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_progressbar.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\tft\tft.h
+	"tft_spi_driver.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_spi_driver.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\ctp.h
+	"axs5106/axs5106.h"
+	"axs152x/axs152x.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\axs5106\axs5106.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\axs152x\axs152x.h
+
+1751938161 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func.h
+	"common/msgbox.h"
+	"common/listbox.h"
+	"common/rotary.h"
+	"common/func_switching.h"
+	"func_clock.h"
+	"func_bt.h"
+	"common/func_idle.h"
+	"common/func_lowpwr.h"
+	"common/func_manage.h"
+	"common/func_update.h"
+	"func_bt_dut.h"
+	"func_music.h"
+	"func_usbdev.h"
+	"func_recorder.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\msgbox.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\listbox.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\rotary.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_switching.h
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock.h
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_idle.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_lowpwr.h
+	"ute_module_gui_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\gui\ute_module_gui_common.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"typedef.h"
+	"include.h"
+
+1751938176 h:\zzp\ab5691_sdk\ute\module\platform\ute_module_platform.h
+	"include.h"
+	"rt_thread.h"
+	"ute_flash_map_common.h"
+	"api_gpio.h"
+	"bsp_sys.h"
+	"tft.h"
+	"port_tft.h"
+	"config_extra.h"
+	"ute_module_mem.h"
+	"rt_thread.h"
+
+1751938176 h:\zzp\ab5691_sdk\app\projects\watch240\port\port_tft.h
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\mem\ute_module_mem.h
+	"include.h"
+	"ute_project_config.h"
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_manage.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_update.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt_dut.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_music.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_usbdev.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_recorder.h
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\plugin\plugin.h
+	"user_halt.h"
+	"multi_lang.h"
+	"bt_call.h"
+	"port_ctp.h"
+	"port_tft.h"
+	"port_sd.h"
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\plugin\user_halt.h
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\plugin\multi_lang.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\plugin\bt_call.h
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\port\port_ctp.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\port\port_sd.h
+
+1750924948 h:\zzp\ab5691_sdk\app\projects\watch240\res.h
+
+1750924947 h:\zzp\ab5691_sdk\app\projects\watch240\ui.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\ui_external.h
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\log\ute_module_log.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\language\ute_language_common.h
+	"ute_module_platform.h"
+	"ute_project_config.h"
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language.h
+	<include.h>
+
+1750834310 h:\zzp\ab5691_sdk\ute\application\ute_application_common.h
+	"ute_module_platform.h"
+	"ute_project_config.h"
+	"ute_module_filesystem.h"
+	"ute_module_systemtime.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\filesystem\ute_module_filesystem.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"lfs.h"
+
+1750404598 h:\zzp\ab5691_sdk\ute\thrid_lib\little_fs\lfs.h
+	"lfs_util.h"
+
+1750404598 h:\zzp\ab5691_sdk\ute\thrid_lib\little_fs\lfs_util.h
+	<string.h>
+	<stdarg.h>
+	<inttypes.h>
+	"ute_module_log.h"
+	"ute_module_platform.h"
+	<stdlib.h>
+	<assert.h>
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\systemtime\ute_module_systemtime.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\message\ute_module_message.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_task_application.h"
+
+1750404598 h:\zzp\ab5691_sdk\ute\task\ute_task_application.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\call\ute_module_call.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+	"ute_module_call.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\motor\ute_drv_motor.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\protocol\ute_module_protocol.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_profile_ble.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\profile\ute_module_profile_ble.h
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\notify\ute_module_notify.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\notdisturb\ute_module_notdisturb.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404598 h:\zzp\ab5691_sdk\ute\module\weather\ute_module_weather.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\heart\ute_module_heart.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\bloodoxygen\ute_module_bloodoxygen.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\battery\ute_drv_battery_common.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"include.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\sleep\ute_module_sleep.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_sleep_algorithms_on_band.h"
+	"ute_all_sports_int_algorithms.h"
+	"ute_module_systemtime.h"
+	"include.h"
+	"ute_module_CyweeMotion_inactivity.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\lib\ute_sleep_algorithms_on_band.h
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\lib\ute_all_sports_int_algorithms.h
+	"ute_project_config.h"
+	"ute_step_int_algorithms_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\lib\ute_step_int_algorithms_common.h
+	"include.h"
+	"ute_all_sports_int_algorithms.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\sport\ute_module_sport.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_all_sports_int_algorithms.h"
+	"ute_module_systemtime.h"
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\findphone\ute_module_findphone.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\liftwrist\ute_module_liftwrist.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\temperature\ute_drv_temperature_common.h
+	"ute_module_platform.h"
+	"ute_project_config.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\factorytest\ute_module_factorytest.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+	"ute_module_message.h"
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\music\ute_module_music.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\menstrualcycle\ute_module_menstrualcycle.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\newfactorytest\ute_module_newfactorytest.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+	"ute_module_factorytest.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\localringtone\ute_module_localringtone.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\appbinding\ute_module_appbinding.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\breathrate\ute_module_breathrate.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\bedsidemode\ute_module_bedside_mode.h
+	"ute_project_config.h"
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\emotionpressure\ute_module_emotionpressure.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+	"StressEst.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\stressest.h
+	<stdbool.h>
+	<stdint.h>
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\keysetfunc\ute_module_keysetfunc.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\led\ute_drv_led.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_common.h
+	"ute_module_platform.h"
+	"ute_project_config.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\temperature\ute_module_temperature.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\micrecord\ute_module_micrecord.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"include.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\drv\battery\ute_drv_battery_common.c
+	"ute_drv_battery_common.h"
+	"ute_module_log.h"
+	"ute_drv_motor.h"
+	"ute_module_systemtime.h"
+	"ute_application_common.h"
+	"ute_module_message.h"
+	"include.h"
+	"msgbox.h"
+	"ute_module_sport.h"
+	"ute_module_music.h"
+	"ute_module_protocol.h"
+	"ute_module_call.h"
+	"func_cover.h"
+	"ute_module_newFactoryTest.h"
+	"ute_module_gui_common.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_cover.h
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_common.c
+	"ute_module_log.h"
+	"ute_drv_gsensor_common.h"
+	"ute_project_config.h"
+	"ute_module_message.h"
+	"ute_drv_gsensor_stk8321.h"
+	"ute_drv_gsensor_sc7a20e.h"
+	"ute_drv_gsensor_sc7a20h.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_stk8321.h
+	"ute_project_config.h"
+	"ute_drv_gsensor_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_sc7a20e.h
+	"ute_project_config.h"
+	"ute_drv_gsensor_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_sc7a20h.h
+	"ute_project_config.h"
+	"ute_drv_gsensor_common.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_sc7a20h.c
+	"ute_module_log.h"
+	"ute_drv_gsensor_common.h"
+	"ute_project_config.h"
+	"ute_module_message.h"
+	"ute_module_platform.h"
+	"ute_drv_gsensor_sc7a20h.h"
+	"ute_module_platform.h"
+	"SL_Acc_Mtp_WR.h"
+	"ute_application_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\gsensor\sl_acc_mtp_wr.h
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\drv\gsensor\ute_drv_gsensor_stk8321.c
+	"ute_module_log.h"
+	"ute_drv_gsensor_common.h"
+	"ute_project_config.h"
+	"ute_module_message.h"
+	"ute_module_platform.h"
+	"ute_drv_gsensor_stk8321.h"
+	"ute_module_platform.h"
+	"bsp_i2c.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\drv\led\ute_drv_led.c
+	"ute_drv_led.h"
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_drv_battery_common.h"
+	"ute_application_common.h"
+	"ute_module_platform.h"
+	"ute_module_notdisturb.h"
+	"ute_module_gui_common.h"
+	"ute_module_newFactoryTest.h"
+	"include.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\drv\motor\ute_drv_motor.c
+	"ute_drv_motor.h"
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_drv_battery_common.h"
+	"ute_application_common.h"
+	"ute_module_platform.h"
+	"ute_module_notdisturb.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_screen_common.c
+	"ute_drv_screen_common.h"
+	"ute_module_log.h"
+	"gui.h"
+	"ute_drv_tft_s240x284_i18_st7789p3_xhl183ba2401.h"
+	"ute_drv_tft_s240x284_nv3030b_hy201068avc.h"
+	"ute_drv_boe_s240x284_i183_jd9853_wv018lzq_qspi.h"
+	"ute_drv_boe_s240x296_i183_jd9853_wv018lzq_qspi.h"
+	"ute_drv_tft_s240x284_nv3030b_zd183g1196.h"
+	"ute_drv_tft_s360X360_nv3030b_hy139071a.h"
+	"ute_drv_boe_s240x296_i183_jd9853_wv018lzq_qspi.h"
+	"ute_drv_tft_s360X360_nv3030b_zd138g1616.h"
+
+1751939330 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_screen_common.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_i18_st7789p3_xhl183ba2401.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_nv3030b_hy201068avc.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_boe_s240x284_i183_jd9853_wv018lzq_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_nv3030b_zd183g1196.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_nv3030b_hy139071a.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_gc9b71_zd138g1616.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_jd9853_hy018214ov.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_i183_jd9853_0185a035_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x296_gc9309_js202018a_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_st77916_hy138026a_ov_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_i172_st77916_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x240_nv3002c_hy138026a.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_amoled_s368_x448_gc3a71_hk0j1931972b03_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_gc9b71_hy139074a.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_gc9b71_js139005a.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_i183_jd9853_sxt180g1911_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s320x380_st77916_truly_191_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_amoled_s368_x448_ch13620_193wy01012_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x296_jd9853_hkoe19124b01_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s240x284_nv3030b_hy201077r.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\drv\temperature\ute_drv_temperature_common.c
+	"ute_module_log.h"
+	"ute_drv_temperature_common.h"
+	"ute_project_config.h"
+	"ute_drv_temperature_infrared_thermistor.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\drv\temperature\ute_drv_temperature_infrared_thermistor.h
+	"ute_module_platform.h"
+	"ute_project_config.h"
+	"ute_drv_temperature_common.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\drv\temperature\ute_drv_temperature_infrared_thermistor.c
+	"ute_module_log.h"
+	"ute_drv_temperature_infrared_thermistor.h"
+	"ute_project_config.h"
+	"include.h"
+	<math.h>
+
+1750834313 source:h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language.c
+	"ute_multi_language.h"
+	"ute_multi_language_en_rus.h"
+	"ute_multi_language_ar_ril.h"
+	"ute_multi_language_ru_rru.h"
+	"ute_multi_language_es_res.h"
+	"ute_multi_language_fr_rfr.h"
+	"ute_multi_language_in_rid.h"
+	"ute_multi_language_pl_rpl.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_zh_rcn.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_en_rus.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_ar_ril.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_ru_rru.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_tr_rtr.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_ms_rmy.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_ja_rjp.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_de_rde.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_es_res.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_fr_rfr.h
+	"ute_multi_language.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_in_rid.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_it_rit.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_pt_rpt.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_th_rth.h
+	"ute_multi_language.h"
+
+1750404607 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_vi_rvn.h
+	"ute_multi_language.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\language\ute_language_common.c
+	"ute_language_common.h"
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\appbinding\ute_module_appbinding.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_appbinding.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_drv_battery_common.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\bedsidemode\ute_module_bedside_mode.c
+	"ute_module_bedside_mode.h"
+	"ute_module_filesystem.h"
+	"ute_module_platform.h"
+	"ute_module_log.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\bloodoxygen\ute_module_bloodoxygen.c
+	"ute_module_heart.h"
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_protocol.h"
+	"ute_module_crc.h"
+	"ute_drv_motor.h"
+	"ute_module_sport.h"
+	"ute_drv_battery_common.h"
+	"ute_module_factoryTest.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\crc\ute_module_crc.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\breathrate\ute_module_breathrate.c
+	"ute_module_heart.h"
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_breathrate.h"
+	"stdlib.h"
+	"ute_module_protocol.h"
+	"ute_module_crc.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\call\ute_module_call.c
+	"ute_module_call.h"
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_gui_common.h"
+	"ute_application_common.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_module_charencode.h"
+	"include.h"
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\charencode\ute_module_charencode.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\charencode\ute_module_charencode.c
+	"ute_module_charencode.h"
+	"ute_module_log.h"
+	"include.h"
+	"Lang_Thai_Arialuni.h"
+	"Lang_Bengali_Noto.h"
+	"Lang_Hebrew_Noto.h"
+	"Lang_Arabic_Noto.h"
+	"Lang_Devanagari.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\crc\ute_module_crc.c
+	"ute_module_crc.h"
+	"ute_module_log.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\emotionpressure\ute_module_emotionpressure.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_emotionPressure.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_module_heart.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_drv_battery_common.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_sport.h"
+	"ute_module_crc.h"
+	"ute_module_factoryTest.h"
+	"ute_module_newFactoryTest.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\factorytest\ute_module_factorytest.c
+	"include.h"
+	"ute_module_factorytest.h"
+	"ute_module_log.h"
+	"ute_module_systemtime.h"
+	"ute_drv_gsensor_common.h"
+	"ute_drv_motor.h"
+	"ute_module_heart.h"
+	"ute_drv_battery_common.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_module_gui_common.h"
+	"ute_module_sport.h"
+	"ute_module_temperature.h"
+	"ute_application_common.h"
+	"ute_module_call.h"
+	"ute_drv_temperature_common.h"
+	"ute_module_micrecord.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\fifo\ute_module_simple_fifo.c
+	"ute_module_simple_fifo.h"
+	"ute_module_platform.h"
+	"ute_module_log.h"
+	<string.h>
+
+1750404597 h:\zzp\ab5691_sdk\ute\module\fifo\ute_module_simple_fifo.h
+	<stdint.h>
+	<stdbool.h>
+	<stddef.h>
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\filesystem\ute_module_filesystem.c
+	"ute_module_filesystem.h"
+	"ute_module_platform.h"
+	"ute_module_log.h"
+	"lfs.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\findphone\ute_module_findphone.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_findphone.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\gui\ute_module_gui_common.c
+	"include.h"
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_drv_screen_common.h"
+	"ute_application_common.h"
+	"ute_module_gui_common.h"
+	"ute_module_heart.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_sport.h"
+	"ute_module_filesystem.h"
+	"ute_module_watchonline.h"
+	"ute_drv_battery_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\watchonline\ute_module_watchonline.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+	"include.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\heart\ute_module_heart.c
+	"ute_module_heart.h"
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_protocol.h"
+	"ute_module_crc.h"
+	"ute_module_gui_common.h"
+	"ute_drv_motor.h"
+	"ute_module_filesystem.h"
+	"ute_module_bloodoxygen.h"
+	"ute_drv_battery_common.h"
+	"ute_module_sport.h"
+	"ute_module_message.h"
+	"ute_module_factoryTest.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\keysetfunc\ute_module_keysetfunc.c
+	"ute_application_common.h"
+	"ute_module_filesystem.h"
+	"ute_module_keysetfunc.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\liftwrist\ute_module_liftwrist.c
+	"ute_module_liftwrist.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\localringtone\ute_module_localringtone.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_localRingtone.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_drv_battery_common.h"
+	"ute_module_notdisturb.h"
+	"ute_module_music.h"
+	"include.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\log\ute_module_log.c
+	"ute_module_log.h"
+	"ute_module_profile_ble.h"
+	"ute_application_common.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\mem\ute_module_mem.c
+	"ute_module_mem.h"
+	"ute_module_log.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\menstrualcycle\ute_module_menstrualcycle.c
+	"ute_module_log.h"
+	"ute_module_menstrualcycle.h"
+	"ute_module_systemtime.h"
+	"ute_application_common.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\message\ute_module_message.c
+	"ute_module_message.h"
+	"ute_module_log.h"
+	"ute_module_systemtime.h"
+	"ute_drv_motor.h"
+	"ute_module_notify.h"
+	"ute_application_common.h"
+	"ute_module_sport.h"
+	"ute_module_gui_common.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_heart.h"
+	"ute_module_watchonline.h"
+	"ute_module_factorytest.h"
+	"ute_module_call.h"
+	"ute_module_localRingtone.h"
+	"ute_module_micrecord.h"
+	"ute_module_emotionPressure.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\micrecord\ute_module_micrecord.c
+	"include.h"
+	"ute_module_micrecord.h"
+	"ute_module_log.h"
+	"ute_module_charencode.h"
+	"ute_module_systemtime.h"
+	"ute_module_message.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\music\ute_module_music.c
+	"ute_module_music.h"
+	"ute_module_log.h"
+	"ute_module_charencode.h"
+	"ute_module_protocol.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_filesystem.h"
+	"ute_drv_motor.h"
+	"ute_module_call.h"
+	"include.h"
+	<ctype.h>
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\newfactorytest\ute_module_newfactorytest.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_newFactoryTest.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_module_gui_common.h"
+	"ute_module_heart.h"
+	"ute_module_localRingtone.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\notdisturb\ute_module_notdisturb.c
+	"ute_module_notdisturb.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_module_gui_common.h"
+	"ute_module_sport.h"
+	"ute_module_liftwrist.h"
+	"func_cover.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\notify\ute_module_notify.c
+	"ute_module_notify.h"
+	"ute_module_log.h"
+	"ute_module_filesystem.h"
+	"ute_module_call.h"
+	"ute_application_common.h"
+	"ute_drv_motor.h"
+	"ute_module_message.h"
+	"ute_module_charencode.h"
+	"ute_module_notdisturb.h"
+	"func_cover.h"
+	"ute_module_platform.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\platform\ute_module_platform.c
+	"ute_module_platform.h"
+	"ute_module_log.h"
+	"ute_project_config.h"
+	"ute_module_message.h"
+	"ute_task_application.h"
+	"ute_module_systemtime.h"
+	"ute_module_call.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_protocol.h"
+	"ute_drv_motor.h"
+	"include.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\profile\ute_module_profile_ble.c
+	"ute_module_profile_ble.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_protocol.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\protocol\ute_module_protocol.c
+	"include.h"
+	"ute_module_message.h"
+	"ute_module_log.h"
+	"ute_module_systemtime.h"
+	"ute_module_protocol.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_filesystem.h"
+	"ute_module_gui_common.h"
+	"ute_module_call.h"
+	"ute_drv_motor.h"
+	"ute_module_notify.h"
+	"ute_module_weather.h"
+	"ute_module_heart.h"
+	"func_cover.h"
+	"ute_module_bloodoxygen.h"
+	"ute_drv_battery_common.h"
+	"ute_module_sport.h"
+	"ute_module_sleep.h"
+	"ute_module_notdisturb.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_findphone.h"
+	"ute_module_watchonline.h"
+	"ute_module_factorytest.h"
+	"ute_module_music.h"
+	"func_cover.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\sleep\ute_module_sleep.c
+	"ute_module_sleep.h"
+	"ute_module_log.h"
+	"ute_module_heart.h"
+	"ute_module_filesystem.h"
+	"ute_application_common.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_flash_map_common.h"
+	"ute_module_systemtime.h"
+	"ute_module_platform.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\sport\ute_module_sport.c
+	"ute_module_message.h"
+	"ute_module_log.h"
+	"ute_module_sport.h"
+	"ute_drv_gsensor_common.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_protocol.h"
+	"ute_module_filesystem.h"
+	"ute_module_crc.h"
+	"ute_module_sleep.h"
+	"ute_module_gui_common.h"
+	"ute_drv_battery_common.h"
+	"ute_drv_motor.h"
+	"ute_module_notdisturb.h"
+	"ute_module_drinkwater.h"
+	"ute_module_heart.h"
+	"cwm_lib.h"
+	"ute_module_CyweeMotion.h"
+	"ute_rotate.h"
+	"func_cover.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\systemtime\ute_module_systemtime.c
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_drv_battery_common.h"
+	"ute_module_message.h"
+	"ute_project_config.h"
+	"ute_module_sleep.h"
+	"ute_module_sport.h"
+	"ute_module_heart.h"
+	"ute_drv_motor.h"
+	"ute_language_common.h"
+	"ute_module_filesystem.h"
+
+1750404597 source:h:\zzp\ab5691_sdk\ute\module\temperature\ute_module_temperature.c
+	"ute_module_temperature.h"
+	"ute_module_log.h"
+	"ute_module_filesystem.h"
+	"ute_drv_temperature_common.h"
+	"ute_module_heart.h"
+	"ute_module_protocol.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_crc.h"
+	"ute_drv_motor.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\ute\module\watchonline\ute_module_watchonline.c
+	"ute_module_heart.h"
+	"ute_module_systemtime.h"
+	"ute_module_log.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_watchonline.h"
+	"ute_module_protocol.h"
+	"ute_module_crc.h"
+	"ute_module_gui_common.h"
+	"ute_module_platform.h"
+	"ute_module_call.h"
+	"ute_module_sport.h"
+	"ute_module_message.h"
+	"include.h"
+
+1750404598 source:h:\zzp\ab5691_sdk\ute\module\weather\ute_module_weather.c
+	"ute_module_weather.h"
+	"ute_module_log.h"
+	"ute_module_filesystem.h"
+	"ute_module_charencode.h"
+
+1750404598 source:h:\zzp\ab5691_sdk\ute\task\ute_task_application.c
+	"ute_module_log.h"
+	"ute_task_application.h"
+	"ute_module_filesystem.h"
+	"ute_module_message.h"
+	"ute_module_systemtime.h"
+	"ute_application_common.h"
+	"ute_module_gui_common.h"
+
+1750404598 source:h:\zzp\ab5691_sdk\ute\thrid_lib\little_fs\lfs.c
+	"lfs.h"
+	"lfs_util.h"
+
+1750404598 source:h:\zzp\ab5691_sdk\ute\thrid_lib\little_fs\lfs_util.c
+	"lfs_util.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\ab_common.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\app_data.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\data_storage.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\data_transmit.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\device_attr.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\health_data.c
+	"include.h"
+	"ab_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\msg_notification.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\personal_info.c
+	"include.h"
+	"ab_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\ab_command\status_control.c
+	"include.h"
+	"ab_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\app_ancs.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\app_platform.c
+	"include.h"
+	"func_cover.h"
+	"ute_module_systemtime.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_app\weak_symbol.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_audio.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\adv0.c
+	"include.h"
+	"bsp_ble.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app.c
+	"include.h"
+	"app.h"
+	"ute_module_notify.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app_ab_link.c
+	"include.h"
+	"app_ab_link.h"
+	"bt_fota.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\app_blue_fit.c
+	"include.h"
+	"app_ab_link.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\ble.c
+	"include.h"
+	"bsp_ble.h"
+	"ute_application_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bsp_ams.c
+	"include.h"
+	"bsp_ams.h"
+	"ute_module_music.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bsp_ancs.c
+	"include.h"
+	"bsp_ancs.h"
+	"ute_module_message.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\bt_fota.c
+	"include.h"
+	"bt_fota.h"
+	"ute_module_call.h"
+	"ute_application_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\hid\ble_hid_event.c
+	"ble_hid_service.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\hid\ble_hid_service.c
+	"ble_hid_service.h"
+	"../ble.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\hid\ble_hid_tiktok.c
+	"ble_hid_service.h"
+	"hid_usage.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ble\hid\hid_usage.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\a2dp.c
+	"include.h"
+	"api.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bsp_bt.c
+	"include.h"
+	"api.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_message.h"
+	"ute_module_music.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bsp_bt_call.c
+	"include.h"
+	"ute_module_call.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bsp_bt_ring.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+	"ute_module_notdisturb.h"
+	"ute_module_localRingtone.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bt.c
+	"include.h"
+	"api.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bt_id3_tag.c
+	"include.h"
+	"ute_module_music.h"
+	"ute_application_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bt_sco_app_dbg.c
+	"bt_sco_app_dbg.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bt_sco_app_dbg.h
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\bt_sco_nr_dbg.c
+	"bt_sco_app_dbg.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\dev_vol.c
+	"include.h"
+	"api.h"
+	"ute_module_music.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\hfhs.c
+	"include.h"
+	"api.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\hid.c
+	"include.h"
+	"api.h"
+	"func.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\pbap.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_bt\profile.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_call_mgr.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge.c
+	"include.h"
+	"ute_drv_battery_common.h"
+	"ute_drv_temperature_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_cm.c
+	"include.h"
+	"func.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_dac.c
+	"include.h"
+	"bsp_dac.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_eq.c
+	"include.h"
+	"bsp_eq.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_halt.c
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_hw_timer.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_i2c.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_key.c
+	"include.h"
+	"func.h"
+	"ute_module_log.h"
+	"ute_module_platform.h"
+	"ute_module_message.h"
+	"ute_application_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_map.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_mav.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_mem\bsp_mem.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_mem\heap.c
+	"include.h"
+	"tlsf.h"
+	"rt_thread.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_mem\tlsf.h
+	<stddef.h>
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_mem\tlsf.c
+	"include.h"
+	<limits.h>
+	"tlsf.h"
+	<intrin.h>
+	<ppcintrinsics.h>
+	<ppc_ghs.h>
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\bsp_modem.c
+	"include.h"
+	"api.h"
+	"api_modem.h"
+	"api_iis.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\libs\api_iis.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\bsp_modem_call.c
+	"include.h"
+	"api_iis.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\bsp_modem_sleep.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\modem_custom.c
+	"include.h"
+	"api.h"
+	"api_modem.h"
+	"modem_custom.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_modem\modem_custom.h
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_fs.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_func_music.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_music.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\bsp_record.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_id3_tag.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_lrc.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\music_res.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_music\record_file.c
+	"include.h"
+	"record_file.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_opus.c
+	"include.h"
+	"bsp_opus.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_param.c
+	"include.h"
+	"../ws_air/air/asr_config.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_piano.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_port_int.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_pwm.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_qdec.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_rtc.c
+	"include.h"
+	"ute_project_config.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_saradc.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\bsp_sensor.c
+	"include.h"
+	"ute_module_sport.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hrs3300\fit_hrs3300.c
+	<include.h>
+	"hrs3300.h"
+	"fit_hrs3300.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hrs3300\hrs3300.h
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hrs3300\hrs3300.c
+	<include.h>
+	"hrs3300.h"
+	"hrs3300_reg_init.h"
+	"fit_hrs3300.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hrs3300\hrs3300_reg_init.h
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\fit_hx3605.c
+	<include.h>
+	"hx3605.h"
+	"fit_hx3605.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605.h
+	<stdint.h>
+	<stdbool.h>
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605.c
+	<include.h>
+	"hx3605.h"
+	"hx3605_factory_test.h"
+	"fit_hx3605.h"
+	"SEGGER_RTT.h"
+	"app_timer.h"
+	"nrf_delay.h"
+	"nrf_gpio.h"
+	"nrf_drv_gpiote.h"
+	"twi_master.h"
+	"drv_oled.h"
+	"opr_oled.h"
+	"oled_iic.h"
+	"word.h"
+	"iic.h"
+	"spo2_vec.h"
+	"hr_vec.h"
+	"hrv_testvec.h"
+	"lis3dh_drv.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_factory_test.h
+	<stdint.h>
+	<stdbool.h>
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_factory_test.c
+	<include.h>
+	"hx3605.h"
+	"hx3605_factory_test.h"
+	"SEGGER_RTT.h"
+	"nrf_delay.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_hrs_agc.c
+	<include.h>
+	"hx3605.h"
+	"hx3605_hrs_agc.h"
+	"twi_master.h"
+	"SEGGER_RTT.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_hrs_agc.h
+	<stdint.h>
+	<stdbool.h>
+	"hx3605.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_spo2_agc.c
+	<include.h>
+	"hx3605.h"
+	"hx3605_spo2_agc.h"
+	"twi_master.h"
+	"SEGGER_RTT.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\hx3605\hx3605_spo2_agc.h
+	<stdint.h>
+	<stdbool.h>
+	"hx3605.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\internal_sensor\bsp_internal_sensor.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\msa310\msa310.c
+	"include.h"
+	"msa310.h"
+	"msa_app.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\msa310\msa_app.h
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\msa310\msa_app.c
+	"msa_app.h"
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\sc7a20\sc7a20.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\sc7a20\sl_watch_application.c
+	"sl_watch_application.h"
+	"ute_module_message.h"
+	"include.h"
+	"usart.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\module_heart_vc_int_10.c
+	"include.h"
+	"ute_module_message.h"
+	"ute_module_factorytest.h"
+	"ute_drv_gsensor_common.h"
+	"ute_drv_led.h"
+	"algo.h"
+	"vcHr11Hci.h"
+	"ute_module_sport.h"
+	"spo2Algo_16bit.h"
+	"RspRateEst.h"
+	"ute_module_breathrate.h"
+	"ute_module_emotionPressure.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\spo2algo_16bit.h
+	<stdint.h>
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\rsprateest.h
+	<stdbool.h>
+	<stdint.h>
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_core.c
+	"vc30fx_core.h"
+	"vc30fx_core_com.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_core.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_core_com.h
+	"vc30fx_sample_result.h"
+	"vc30fx_driver_config.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_sample_result.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_driver_config.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_driver.c
+	"vc30fx_core_com.h"
+	"vc30fx_driver_config.h"
+	"vc30fx_driver.h"
+	"ute_module_platform.h"
+	"BIODetect_V14_1.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_driver.h
+	"vcare_device_com.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\biodetect_v14_1.h
+	<stdbool.h>
+	<stdint.h>
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_original_data_send.c
+	"ute_module_profile_ble.h"
+	"ute_project_config.h"
+	"vcare_device_com.h"
+	"vc30fx_sample_result.h"
+	"ute_application_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_user_app.c
+	"vc30fx_driver_com.h"
+	"vc30fx_sample_result.h"
+	"vc30fx_user_app.h"
+	"algo.h"
+	"spo2Algo_16bit.h"
+	"include.h"
+	"ute_module_sport.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_message.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_factorytest.h"
+	"vc30fx_driver.h"
+	"math.h"
+	"os_task.h"
+	"task_vcare_demo.h"
+	"vc30fx_user_app.h"
+	"algo.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vc30fx_driver_com.h
+	"vcare_device_com.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vchr11debug.c
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sensor\vcc30fx\vchr11hci.c
+	"include.h"
+	"vcHr11Hci.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sleep.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_spi1flash.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_spp.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_sys.c
+	"include.h"
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_task_application.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_message.h"
+	"ute_module_sport.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_uart.c
+	"include.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_uitool_phrase.c
+	"include.h"
+	"../gui/components/compo_form.h"
+	"ute_module_systemtime.h"
+	"ute_language_common.h"
+	"ute_module_watchonline.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_vbat.c
+	"include.h"
+	"ute_module_systemtime.h"
+	"ute_drv_battery_common.h"
+	"ute_project_config.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_vddhr_trim.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_animation.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_arc.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_butterfly.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_button.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_cardbox.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_chartbox.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_cube.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_datetime.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_disklist.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_football.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_form.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_iconlist.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_kaleidoscope.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_label.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_listbox.c
+	"include.h"
+	"ute_module_call.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_move_ctr.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_number.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_picturebox.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_progressbar.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_qrcodebox.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rings.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rotary.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_rowbox.c
+	"include.h"
+	"ute_module_watchonline.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_scrollbar.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_shape.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_stacklist.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_textbox.c
+	"include.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\platform\gui\components\component_func.c
+	"include.h"
+	"ute_module_systemtime.h"
+	"ute_module_sport.h"
+	"ute_module_gui_common.h"
+	"ute_module_heart.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_weather.h"
+	"ute_language_common.h"
+	"ute_module_smoke.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\components.c
+	"include.h"
+	"compo_bar.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\axs152x\axs152x.c
+	"include.h"
+	"bsp_i2c.h"
+	"axs152x.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\axs5106\axs5106.c
+	"include.h"
+	"bsp_i2c.h"
+	"axs5106.h"
+	"GD9853_G2538B_AXS5106_V01_03_20231106_App.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\axs5106\gd9853_g2538b_axs5106_v01_03_20231106_app.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_comp.c
+	"include.h"
+	"chsc6x_comp.h"
+	"chsc6x_ramcode.h"
+	"chsc6x_platform.h"
+	"YCY_AB281_801_chsc6x_upd_[304_17]_V241_V3.h"
+	"YCY_JLE012_MB_304_19__V243_V3.h"
+	"chsc6x_main.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_comp.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_ramcode.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_platform.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281b_1805a_304_21_v241_v2.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281_801_chsc6x_upd_[304_17]_v241_v3.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_w26y_w12y_304_23_v242_v2.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281l_g22z_g21y_304_24_v239_v3.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281l_g22z_304_26_v239_v3.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281l_g28z_304_25_v239_v3.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\firmware\ycy_ab281_s81pro_chsc6x_upd_[304_18]_v240_v2.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_main.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_main.c
+	"include.h"
+	"chsc6x_comp.h"
+	"chsc6x_platform.h"
+	"ute_application_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\chsc6x_platform.c
+	"include.h"
+	"chsc6x_platform.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\ctp.c
+	"include.h"
+	"ute_module_message.h"
+	"ute_module_log.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\ctp_cst8x.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\spt5113c.c
+	"spt5113c.h"
+	"bsp_i2c.h"
+	"ute_module_newFactoryTest.h"
+	"spt5113c_firmware_YCY_W16Y_5613B01_A1_01.h"
+	"spt5113c_firmware_YCY_5758B01_A0_01.h"
+	"spt5113c_firmware_YCY_JY139012AV0_01.h"
+	"spt5113c_firmware_YCY_AZ192012A1_01.h"
+	"spt5113c_firmware_YCY_SXT_180G1911V1_01.h"
+	"spt5113c_firmware_YCY_5758B01_A0_01.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\spt5113c.h
+	"include.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\firmware\spt5113c_firmware_ycy_w16y_5613b01_a1_01.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\firmware\spt5113c_firmware_ycy_5758b01_a0_01.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\firmware\spt5113c_firmware_ycy_jy139012av0_01.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\firmware\spt5113c_firmware_ycy_az192012a1_01.h
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\gui\ctp\spt5113c\firmware\spt5113c_firmware_ycy_sxt_180g1911v1_01.h
+
+1750834370 source:h:\zzp\ab5691_sdk\app\platform\gui\gui.c
+	"include.h"
+	"ute_drv_screen_common.h"
+	"ute_module_log.h"
+	"ute_module_gui_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\oled_466_icna3310b.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft.c
+	"include.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+	"ute_module_gui_common.h"
+	"ute_application_common.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_170_560_axs15231b.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_jd9853.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_nv3030b.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_st7789.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_st7789w3.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_320_385_gc9b71.c
+	"include.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_320_st77916.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_320_st77916_rgbw.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_360_gc9c01.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_spi.c
+	"include.h"
+
+1750404594 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_spi_driver.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\libs\strong_le.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\libs\strong_sco.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\libs\strong_symbol.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\config.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_bt_update.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_idle.c
+	"include.h"
+	"func.h"
+	"func_idle.h"
+	"bsp_led.h"
+
+1750404594 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_led.h
+
+1750834370 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_lowpwr.c
+	"include.h"
+	"func.h"
+	"ute_module_message.h"
+	"ute_project_config.h"
+	"ute_module_sport.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_manage.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_ota_ui.c
+	"include.h"
+	"func.h"
+	"func_idle.h"
+	"bsp_led.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_switching.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\func_update.c
+	"include.h"
+	"func.h"
+	"func_update.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\listbox.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\msgbox.c
+	"include.h"
+	"func_cover.h"
+	"ute_project_config.h"
+	"ute_drv_battery_common.h"
+	"ute_drv_motor.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\rotary.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\common\sfunc_bt_ota.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+
+1750841319 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func.c
+	"include.h"
+	"func_menu.h"
+	"func_cover.h"
+	"ute_module_systemtime.h"
+	"ute_language_common.h"
+	"ute_drv_motor.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_activity.c
+	"include.h"
+	"func.h"
+	"ute_module_sport.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_address_book.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_charencode.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_alarm_clock.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_alarm_clock_sub_edit.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_alarm_clock_sub_pop.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_alarm_clock_sub_repeat.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_alarm_clock_sub_set.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_altitude.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bird.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ble_call.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_platform.h"
+	"ute_module_gui_common.h"
+	"ute_drv_motor.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_blood_oxygen.c
+	"include.h"
+	"func.h"
+	"ute_module_bloodoxygen.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bloodsugar.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_breathe.c
+	"include.h"
+	"func.h"
+	"ute_module_heart.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_breathe_finish.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_breathe_run.c
+	"include.h"
+	"func.h"
+	"ute_drv_motor.h"
+	"ute_module_heart.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_breathe_sub_mode.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_breathe_sub_time.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bright_set.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+	"ute_module_music.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt_call.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+	"ute_module_call.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt_dut.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_bt_ring.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_calculator.c
+	"include.h"
+	"func.h"
+	"func_calculator_alg.h"
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_calculator_alg.h
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_calculator_alg.c
+	"include.h"
+	"func_calculator_alg.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_calendar.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_call.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_call_sort.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_call_sub_dial.c
+	"include.h"
+	"func.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_call_sub_record.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_charencode.h"
+	"ute_module_systemtime.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_camera.c
+	"include.h"
+	"func.h"
+	"ute_module_sport.h"
+	"ute_module_message.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_charge.c
+	"include.h"
+	"func.h"
+	"ute_drv_battery_common.h"
+	"ute_drv_motor.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_module_gui_common.h"
+	"ute_module_watchonline.h"
+	"ute_project_config.h"
+	"ute_module_log.h"
+	"ute_module_systemtime.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_butterfly.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_project_config.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_cube.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_project_config.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_light_cube.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_project_config.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_photo.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_module_watchonline.h"
+	"ute_project_config.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_preview.c
+	"include.h"
+	"func.h"
+	"ute_module_gui_common.h"
+	"ute_module_watchonline.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_card.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_module_sport.h"
+	"ute_module_sleep.h"
+	"ute_module_heart.h"
+	"func_bt.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_dropdown.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+	"ute_module_notdisturb.h"
+	"ute_module_liftwrist.h"
+	"ute_application_common.h"
+	"ute_drv_battery_common.h"
+	"ute_module_sport.h"
+	"func_menu.h"
+	"ute_module_call.h"
+	"ute_module_localRingtone.h"
+	"ute_module_lockScreen.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_pullup.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_rotary.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_side.c
+	"include.h"
+	"func.h"
+	"func_clock.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_clock_sub_sidebar.c
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_compass.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_compo_select.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_compo_select_sub.c
+	"include.h"
+	"func.h"
+	"ute_module_log.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_cover.c
+	"include.h"
+	"func.h"
+	"func_cover.h"
+	"ute_module_notify.h"
+	"ute_drv_motor.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_debug_info.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_dial_and_theme.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_disturd_config.c
+	"include.h"
+	"func.h"
+	"ute_module_notdisturb.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_empty.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_findphone.c
+	"include.h"
+	"func.h"
+	"ute_module_findphone.h"
+	"func_cover.h"
+	"ute_module_call.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_flashlight.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_game.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_heart_about .c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_heart_warning.c
+	"include.h"
+	"func.h"
+	"ute_module_heart.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_heartrate.c
+	"include.h"
+	"func.h"
+	"ute_module_heart.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_key_set_function.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"api_mem.h"
+	"compo_listbox.h"
+	"ute_module_keysetfunc.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_light.c
+	"include.h"
+	"func.h"
+	"ute_module_gui_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_long_press.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+	"ute_module_call.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_map.c
+	"include.h"
+	"func.h"
+	"func_3d_batter.h"
+	"ute_module_smoke.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_cum_sudoku.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_disk.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_football.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+	"ute_module_message.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_football_list.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_grid.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_hexagon.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_honeycomb.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_kaleidoscope.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_list.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_ui_data.h
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_ring.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_skyrer.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_sudoku.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menu_sub_waterfall.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_message.c
+	"include.h"
+	"func.h"
+	"ute_module_notify.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_menustyle.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_modem_call.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_modem_ring.c
+	"include.h"
+	"func.h"
+	"func_bt.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_mood.c
+	"include.h"
+	"func.h"
+	"ute_drv_motor.h"
+	"ute_module_emotionPressure.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_mood_about.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_motor_grade.c
+	"include.h"
+	"func.h"
+	"ute_drv_motor.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_music.c
+	"include.h"
+	"func.h"
+	"func_music.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_online_factorytest.c
+	"include.h"
+	"ute_module_factorytest.h"
+	"ute_module_log.h"
+	"ute_drv_battery_common.h"
+	"ute_module_heart.h"
+	"ute_drv_gsensor_common.h"
+	"ute_module_protocol.h"
+	"ute_application_common.h"
+	"ute_module_profile_ble.h"
+	"ute_module_micrecord.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ota_err.c
+	"include.h"
+	"func.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ota_succ.c
+	"include.h"
+	"func.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ota_update.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_oxygen_about.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_passwod_sub_disp.c
+	"include.h"
+	"func.h"
+	"ute_module_lockScreen.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_password_sub_select.c
+	"include.h"
+	"func.h"
+	"ute_module_lockScreen.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_power_off.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"ute_application_common.h"
+	"ute_module_appbinding.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_power_on.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_power_on_language.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"ute_language_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_power_on_scan.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_pressure.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_pressure_explain.c
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_recorder.c
+	"include.h"
+	"func.h"
+	"func_recorder.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_scan.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_about.c
+	"include.h"
+	"func.h"
+	"ute_module_log.h"
+	"string.h"
+	"ute_application_common.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_disturd.c
+	"include.h"
+	"func.h"
+	"ute_module_notdisturb.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_dousing.c
+	"include.h"
+	"func.h"
+	"ute_module_charencode.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_language.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"ute_language_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_off.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_password.c
+	"include.h"
+	"func.h"
+	"ute_module_lockScreen.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_restart.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_rstfy.c
+	"include.h"
+	"func.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_sav.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_localRingtone.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_time.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_wrist.c
+	"include.h"
+	"func.h"
+	"ute_module_sport.h"
+	"ute_application_common.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sleep.c
+	"include.h"
+	"func.h"
+	"ute_module_sleep.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_smartstack.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport.c
+	"include.h"
+	"func.h"
+	"ute_all_sports_int_algorithms.h"
+	"ute_module_sport.h"
+	"ute_drv_battery_common.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport_config.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport_finish.c
+	"include.h"
+	"func.h"
+	"ute_all_sports_int_algorithms.h"
+	"ute_module_sport.h"
+	"ute_drv_motor.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport_sort.c
+	"include.h"
+	"func.h"
+	"ute_all_sports_int_algorithms.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport_sub_run.c
+	"include.h"
+	"func.h"
+	"ute_all_sports_int_algorithms.h"
+	"ute_module_sport.h"
+	"ute_module_heart.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sport_switching.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_stopwatch.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_stopwatch_sub_record.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_style.c
+	"include.h"
+	"func.h"
+	"func_menu.h"
+	"ute_module_gui_common.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_sub_sos.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_system.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_tetris.c
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_tetris_start.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_time_sub_custom.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_timer.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_toolbox.c
+	"include.h"
+	"func.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_up_watch_dial.c
+	"include.h"
+	"func.h"
+	"ute_module_watchonline.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_usbdev.c
+	"include.h"
+	"func.h"
+	"func_usbdev.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_voice.c
+	"include.h"
+	"func.h"
+	"func_cover.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_volume.c
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_watchface_and_theme.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_weather.c
+	"include.h"
+	"func.h"
+	"ute_module_weather.h"
+	"ute_module_systemtime.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_women_health.c
+	"include.h"
+	"func.h"
+	"ute_module_menstrualcycle.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\test_mode\func_factory_testing_mode.c
+	"include.h"
+	"func.h"
+	"ute_module_heart.h"
+	"ute_module_bloodoxygen.h"
+	"ute_module_sport.h"
+	"ute_drv_motor.h"
+	"ute_application_common.h"
+	"ute_module_newFactoryTest.h"
+	"ute_drv_gsensor_common.h"
+	"ute_drv_battery_common.h"
+	"ute_module_micrecord.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\test_mode\func_test_ageing.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"ute_drv_motor.h"
+	"ute_application_common.h"
+	"ute_module_newFactoryTest.h"
+	"ute_drv_battery_common.h"
+	"ute_module_smoke.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\test_mode\func_test_audio.c
+	"include.h"
+	"func.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\test_mode\func_test_mode.c
+	"include.h"
+	"func.h"
+	"ute_module_factorytest.h"
+	"ute_module_newFactoryTest.h"
+	"ute_application_common.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\test_mode\func_test_mode_list.c
+	"include.h"
+	"func.h"
+	"ute_module_factorytest.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\main.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\plugin\bt_call.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\plugin\eq_table.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\plugin\multi_lang.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\plugin\plugin.c
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_ctp.c
+	"include.h"
+	"port_ctp.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_key.c
+	"include.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_mute.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_sd.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_tft.c
+	"include.h"
+	"port_tft.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\port\port_update.c
+	"include.h"
+
+1751941374 h:\zzp\ab5691_sdk\ute\project_config\ute_project_config_abe012.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\ecig.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig_polling_algrithm.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig_switch_algrithm.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_gpio.h
+
+1750404595 h:\zzp\ab5691_sdk\app\projects\watch240\i18n\lang.h
+	"ute_language_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\password\ute_module_lockscreen.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_boe_s240x296_i183_jd9853_wv018lzq_qspi.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\drv\screen\ute_drv_tft_s360x360_nv3030b_zd138g1616.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_drv_screen_common.h"
+
+1750834313 h:\zzp\ab5691_sdk\ute\language\defaultlanguage\ute_multi_language_pl_rpl.h
+	"ute_multi_language.h"
+
+1750834310 source:h:\zzp\ab5691_sdk\ute\module\password\ute_module_lockscreen.c
+	"ute_module_log.h"
+	"ute_module_message.h"
+	"ute_module_lockScreen.h"
+	"ute_module_protocol.h"
+	"ute_module_profile_ble.h"
+	"ute_application_common.h"
+	"ute_module_gui_common.h"
+	"ute_module_filesystem.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\ute\module\smoke\ute_module_smoke.c
+	"ute_module_smoke.h"
+	"ute_module_log.h"
+	"func_cover.h"
+	"ute_module_filesystem.h"
+	"ute_module_charencode.h"
+
+1750834310 h:\zzp\ab5691_sdk\ute\module\smoke\ute_module_smoke.h
+	"ute_project_config.h"
+	"ute_module_platform.h"
+	"ute_module_systemtime.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_asr.c
+	"include.h"
+	<lib_et_asr.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\lib_et_asr.h
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig.c
+	"include.h"
+	"ute_module_smoke.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig_polling_algrithm.c
+	"include.h"
+
+1750843811 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\bsp_ecig_switch_algrithm.c
+	"include.h"
+	"ute_module_message.h"
+	"ute_module_lockScreen.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_ecig\ecig.c
+	"include.h"
+	"ecig.h"
+	"ute_module_message.h"
+	"ute_module_lockScreen.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\bsp\bsp_gpio.c
+	"include.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\asr_config.h
+	"include.h"
+	"func_api_air.h"
+	"ir.h"
+	"ir_index.h"
+	"wanson_ir.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\func_api_air.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir_index.h
+	"macro.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\wanson_ir.h
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\components\compo_bar.c
+	"include.h"
+	"compo_bar.h"
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\components\compo_bar.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\ycy_ab281_801_chsc6x_upd_[304_17]_v241_v3.h
+
+1750834305 h:\zzp\ab5691_sdk\app\platform\gui\ctp\chsc6x\ycy_jle012_mb_304_19__v243_v3.h
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_jd9853w3.c
+	"include.h"
+
+1750834305 source:h:\zzp\ab5691_sdk\app\platform\gui\tft\tft_240_nv3030b_s.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws\asr.c
+	"include.h"
+	"asr.h"
+	"fst_graph.h"
+	"fst_words.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws\asr.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws\fst_graph.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws\fst_words.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws\asr_prefetch.c
+	"include.h"
+	"asr.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws\asr_process.c
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws\asr_strong_symbol.c
+	"include.h"
+	"asr.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\func_api_air.c
+	"asr_config.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir_cap.c
+	"include.h"
+	"ir_cap.h"
+	"asr_config.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir_cap.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir_code.c
+	"asr_config.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\ir_data_parse.c
+	"asr_config.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\air\isd_pwm_ir_send.c
+	"asr_config.h"
+	"bsp_hw_timer.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\asr.c
+	"include.h"
+	"asr.h"
+	"fst_graph.h"
+	"fst_words.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\asr.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\fst_graph.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\ws_air\fst_words.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\asr_prefetch.c
+	"include.h"
+	"asr.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\asr_process.c
+	"include.h"
+	"../ws_air/air/ir_cap.h"
+	"../ws_air/air/func_api_air.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\ws_air\asr_strong_symbol.c
+	"include.h"
+	"asr.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\yj\bsp_et_asr_ctrl.c
+	"include.h"
+	"bsp_et_asr_ctrl.h"
+	<lib_et_asr.h>
+	"et_keyword.h"
+	"et_thres_list.h"
+	"et_kws_labels.h"
+	"et_collects.h"
+	"third_kws_event.h"
+	"third_func.h"
+	"third_bsp_sys.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\bsp_et_asr_ctrl.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\et_keyword.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\et_thres_list.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\et_kws_labels.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\et_collects.h
+	<stdint.h>
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\third_kws_event.h
+	"include.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\third_func.h
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\third_bsp_sys.h
+	"include.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\yj\lib_et_ui_io.c
+	"include.h"
+	"lib_et_ui_io.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\platform\modules\yj\lib_et_ui_io.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\platform\modules\yj\third_bsp_sys.c
+	"include.h"
+	"third_bsp_sys.h"
+	"third_kws_event.h"
+	<lib_et_ui_io.h>
+	"third_func.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\platform\modules\yj\third_func.c
+	"include.h"
+	"third_func.h"
+	"ute_module_smoke.h"
+	<lib_et_ui_io.h>
+	<lib_et_asr.h>
+	"third_bsp_sys.h"
+	"bsp_et_asr_ctrl.h"
+	"third_kws_event.h"
+	"ute_module_message.h"
+	"ute_module_call.h"
+	"ute_module_notdisturb.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\3d\func_3d_batter.c
+	"include.h"
+	"func.h"
+
+1750404595 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_blood_pressure.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_calendar_them.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ecig_reminder.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"../../../../ute/module/smoke/ute_module_smoke.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ecig_reminderclock.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"../../../../ute/module/smoke/ute_module_smoke.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ecig_set_power.c
+	"include.h"
+	"func.h"
+	"ute_module_smoke.h"
+
+1750834370 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_ecig_vpae.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+	"api_gui.h"
+	"../../../../ute/module/smoke/ute_module_smoke.h"
+
+1750834306 h:\zzp\ab5691_sdk\app\projects\watch240\functions\3d\func_3d_batter.h
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_set_puffs.c
+	"include.h"
+	"func.h"
+	"ute_module_call.h"
+	"ute_module_localRingtone.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_set_target_puffs.c
+	"include.h"
+	"func.h"
+	"ute_module_smoke.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_setting_sub_sos.c
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_smoke_target_sub_pop.c
+	"include.h"
+	"func.h"
+	"ute_module_systemtime.h"
+
+1750834306 source:h:\zzp\ab5691_sdk\app\projects\watch240\functions\func_watch_clock.c
+	"include.h"
+	"func.h"
+	"compo_bar.h"
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_charge_ex.h
+	"bsp_charge_ex_bat.h"
+	"bsp_charge_ex_hal.h"
+	"bsp_hall.h"
+	"bsp_earphone_manage.h"
+	"bsp_smart_vhouse_host.h"
+	"lp7812c/lp7812c.h"
+	"charge_ic_comm/charge_ic.h"
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_charge_ex_bat.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_charge_ex_hal.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_hall.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_earphone_manage.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_smart_vhouse_host.h
+	"bsp_smart_vhouse_host_cmd.h"
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\bsp_smart_vhouse_host_cmd.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\lp7812c\lp7812c.h
+
+1751938176 h:\zzp\ab5691_sdk\app\platform\bsp\bsp_charge_ex\charge_ic_comm\charge_ic.h
+

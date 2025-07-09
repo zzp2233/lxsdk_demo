@@ -1,10 +1,3 @@
-/*
- * @brief: 
- * @LastEditors: ljf
- * @LastEditTime: 2025-07-09 14:35:55
- * @FilePath: \lxsdk_demo\app\projects\watch240\main.c
- * @Date: 2025-07-09 14:35:36
- */
 #include "include.h"
 
 #if (GUI_SELECT == GUI_TFT_170_560_AXS15231B)

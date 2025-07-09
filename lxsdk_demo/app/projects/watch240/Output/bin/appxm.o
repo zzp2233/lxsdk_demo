@@ -1,0 +1,9 @@
+depend(0x01010200);
+setflash(1, 0x00800000, 1, 0, 0);
+setspace(0x00005000);
+setuserbin(0x00106000, 0x00560000, ui.bin, 0); #\U00008d77\U000059cb\U00005730\U00005740\U00008981\U00004e0eui.xm\U0000540c\U00006b65
+setauth(0x6564CE1E, asr_soft_key);
+setunpack(unpack.bin);
+setpkgarea(0x0066B000, 0x000C0000);
+make(dcf_buf, header.bin, app.bin, res.bin, xcfg.bin, updater.bin);
+save(dcf_buf, app.dcf);
