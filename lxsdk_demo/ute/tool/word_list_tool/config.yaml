@@ -1,0 +1,178 @@
+# 如果需要增加或减少语言支持，请微信 Roger-at-wechat 寻求支持，常规情况下不要编辑本文件！
+
+---
+- xid: 2
+  text: "zh_rCN 中文(简体）"
+  checked: true
+
+- xid: 4
+  text: "en_rUS 英语(美国）"
+  checked: true
+
+- xid: 5
+  text: "ar_rIL 阿拉伯语(以色列）"
+  checked: true
+
+- xid: 6
+  text: "ru_rRU 俄语(俄罗斯）"
+  checked: true
+
+- xid: 7
+  text: "tr_rTR 土耳其语(土耳其）"
+  checked: true
+
+- xid: 8
+  text: "ms_rMY 马来语(马来西亚）"
+  checked: true
+
+- xid: 9
+  text: "ja_rJP 日语(日本）"
+  checked: true
+
+- xid: 10
+  text: "sr_rRS 塞尔维亚语(塞尔维亚）"
+  checked: true
+
+- xid: 11
+  text: "bg_rBG 保加利亚语(保加利亚）"
+  checked: true
+
+- xid: 12
+  text: "cs_rCZ 捷克语(捷克共和国）"
+  checked: true
+
+- xid: 13
+  text: "da_rDK 丹麦语(丹麦）"
+  checked: true
+
+- xid: 14
+  text: "de_rDE 德语(德国）"
+  checked: true
+
+- xid: 15
+  text: "el     希腊语(希腊）"
+  checked: true
+
+- xid: 16
+  text: "es_rES 西班牙(西班牙）"
+  checked: true
+
+- xid: 17
+  text: "es_rMX 拉美西(墨西哥）"
+  checked: true
+
+- xid: 18
+  text: "fi_rFI 芬兰语(芬兰）"
+  checked: true
+
+- xid: 19
+  text: "fr_rFR 法语(法国）"
+  checked: true
+
+- xid: 20
+  text: "hr_rHR 克罗地亚语(克罗地亚）"
+  checked: true
+
+- xid: 21
+  text: "hu_rHU 匈牙利语(匈牙利）"
+  checked: true
+
+- xid: 22
+  text: "in_rID 印度尼西亚语(印度尼西亚）"
+  checked: true
+
+- xid: 23
+  text: "it_rIT 意大利语(意大利）"
+  checked: true
+
+- xid: 24
+  text: "iw_rIL 希伯来语(以色列）"
+  checked: true
+
+- xid: 25
+  text: "nb_rNO 挪威博克马尔语(挪威）"
+  checked: true
+
+- xid: 26
+  text: "nl_rNL 荷兰语(荷兰）"
+  checked: true
+
+- xid: 27
+  text: "pl_rPL 波兰语(波兰）"
+  checked: true
+
+- xid: 29
+  text: "pt_rPT 葡萄牙语(葡萄牙）"
+  checked: true
+
+- xid: 30
+  text: "ro_rRO 罗马尼亚语(罗马尼亚）"
+  checked: true
+
+- xid: 31
+  text: "sk_rSK 斯洛伐克语(斯洛伐克）"
+  checked: true
+
+- xid: 32
+  text: "sl_rSL 斯洛文尼亚语"
+  checked: true
+
+- xid: 33
+  text: "sv_rSE 瑞典语(瑞典）"
+  checked: true
+
+- xid: 34
+  text: "th_rTH 泰语(泰国）"
+  checked: true
+
+- xid: 35
+  text: "uk_rUA 乌克兰语(乌克兰）"
+  checked: true
+
+- xid: 36
+  text: "vi_rVN 越南语(越南）"
+  checked: true
+
+- xid: 37
+  text: "zh_rHK 中文(香港）"
+  checked: true
+
+- xid: 38
+  text: "hi_rIN 印地语(印度）"
+  checked: true
+
+- xid: 43
+  text: "tl_rPH 塔加路语(菲律宾）"
+  checked: true
+
+- xid: 44
+  text: "fa_rIR 波斯语(伊朗）"
+  checked: true
+
+- xid: 45
+  text: "bn 孟加拉语"
+  checked: true
+
+- xid: 47
+  text: "ko_rKR 朝鲜语(韩国）"
+  checked: true
+
+- xid: 48
+  text: "en_rNZ 英语(新西兰）"
+  checked: true
+
+- xid: 49
+  text: "en_rIE 英语(爱尔兰）"
+  checked: true
+
+- xid: 50
+  text: "zh_rTW 中文(台湾）"
+  checked: true
+
+- xid: 51
+  text: "km 高棉语"
+  checked: true
+
+- xid: 52
+  text: "ur_rPK 乌尔都语"
+  checked: true

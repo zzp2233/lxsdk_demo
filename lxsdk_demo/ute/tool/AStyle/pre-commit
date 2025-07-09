@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# 获取已被 add 的文件列表
+check_results=$(git diff --cached --name-only --diff-filter=ACM)
+array=(${check_results// / })
+
+cchar=".c"
+ccharCnt=0
+hchar=".h"
+hcharCnt=0
+
+# 遍历文件列表
+for var in ${array[@]}; do
+    if [[ $var == *$cchar ]]; then
+        ccharCnt=$((ccharCnt+1))
+        cchararray[ccharCnt]=$var
+    fi
+    if [[ $var == *$hchar ]]; then
+        hcharCnt=$((hcharCnt+1))
+        hchararray[hcharCnt]=$var
+    fi
+done
+
+echo ".c file has astyle cnt is ${ccharCnt}"
+echo ".h file has astyle cnt is ${hcharCnt}"
+
+# 处理 .c 文件
+for var in ${cchararray[@]}; do
+    ./ute/tool/AStyle/AStyle.exe --style=allman -s4 -S -N -L -m0 -M40 --convert-tabs --suffix=none $var
+    git add $var
+done
+
+# 处理 .h 文件
+for var in ${hchararray[@]}; do
+    ./ute/tool/AStyle/AStyle.exe --style=allman -s4 -S -N -L -m0 -M40 --convert-tabs --suffix=none $var
+    git add $var
+done
+
+exit 0
