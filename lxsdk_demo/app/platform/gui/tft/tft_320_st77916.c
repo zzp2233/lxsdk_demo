@@ -5,22 +5,48 @@
 #if (GUI_SELECT == GUI_TFT_320_ST77916)
 
 
-#define WriteData(v) tft_write_data(v)
-#define CommEnd()    tft_write_end()
+#define WriteData(v)        tft_write_data(v)        // 写入一个 8-bit 数据
+#define WriteComm(v)        tft_write_cmd(v)         // 写入一个命令（使用 0x02 协议）
+
 // cmd 12h 1:cmd      4:addr/data
 // cmd 32h 1:cmd/addr 4:data
 // cmd 02h 1:cmd      1:addr/data
-#define WriteComm12(v) \
-({                   \
-bsp_spide_cs(1);         \
-bsp_spide_cs(0);         \
-bsp_spide_bus_mode(SPIDE_1IO);   \
-bsp_spide_snd_byte(0x12);\
-bsp_spide_bus_mode(SPIDE_4IO);   \
-bsp_spide_snd_byte(0x00);\
-bsp_spide_snd_byte(v);   \
-bsp_spide_snd_byte(0x00);\
+
+/*
+S片选信号控制 tft_320_st77916.c:15-16
+            bsp_spide_cs(1) - 拉高CS片选信号，禁用SPI设备
+            bsp_spide_cs(0) - 拉低CS片选信号，使能SPI设备开始通信
+总线模式切换 tft_320_st77916.c:17 tft_320_st77916.c:19
+            bsp_spide_bus_mode(SPIDE_1IO) - 设置SPI总线为1线模式
+            bsp_spide_bus_mode(SPIDE_4IO) - 设置SPI总线为4线模式
+数据发送 tft_320_st77916.c:18-22
+            bsp_spide_snd_byte(0x12) - 发送0x12命令字节
+            bsp_spide_snd_byte(0x00) - 发送地址高字节
+            bsp_spide_snd_byte(v)    - 发送实际的命令参数
+            bsp_spide_snd_byte(0x00) - 发送地址低字节
+*/
+
+/*
+功能：通过 0x12 协议（1Byte CMD + 4Byte ADDR + 4Byte DATA）向屏幕写命令。
+
+通信模式：
+开始为 SPIDE_1IO（1线命令模式）
+随后切为 SPIDE_4IO（4线 QSPI 模式发送数据）
+
+应用场景：用于写入含地址和数据的命令（如 0x2C 写显存）
+*/
+#define WriteComm12(v)  \
+({                      \
+    bsp_spide_cs(1);                            \
+    bsp_spide_cs(0);                            \
+    bsp_spide_bus_mode(SPIDE_1IO);              \
+    bsp_spide_snd_byte(0x12);                   /* 命令类型标志 */ \
+    bsp_spide_bus_mode(SPIDE_4IO);              /* 切换为 4 线数据总线 */ \
+    bsp_spide_snd_byte(0x00);                   /* Addr Byte0 (dummy) */ \
+    bsp_spide_snd_byte(v);                      /* 发送命令 v */ \
+    bsp_spide_snd_byte(0x00);                   /* Addr Byte3 (dummy) */ \
 })
+
 #define WriteComm32(v) \
 ({                   \
 bsp_spide_cs(1);         \

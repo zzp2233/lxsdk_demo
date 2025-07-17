@@ -59,6 +59,26 @@
 #define SPI_ST7789_OFS_Y               0
 
 //屏幕接口模式
+/*
+MODE_3WIRE_9BIT (0) - 3线9位模式
+                        使用3根线：SCLK（时钟）、CS（片选）、D0（数据）
+                        每次传输9位：1位DC标识 + 8位有效数据
+                        DC位用来区分是命令还是数据
+                        
+MODE_3WIRE_9BIT_2LINE (1) - 3线9位双线模式
+                        写命令时用3线9位模式
+                        写数据时切换到双线模式，增加D1/DC线
+                        这是DESPI（Display Enhanced SPI）的一种实现
+
+MODE_4WIRE_8BIT (2) - 4线8位模式
+                        使用4根线：SCLK、CS、D0、DC
+                        每次传输8位纯数据
+                        通过独立的DC线来区分命令和数据
+
+MODE_QSPI (3) - 四线SPI模式
+                        使用6根线：SCLK、CS、D0、D1、D2、D3
+                        支持4位并行数据传输，提高传输速度
+*/
 #define MODE_3WIRE_9BIT                 0                                       //屏幕3线9bit模式: 3线为SCLK CS D0; 9bit每次传输一个byte有效数据, 开头多1bit作为DC识别;
 #define MODE_3WIRE_9BIT_2LINE           1                                       //屏幕3线9bit 两线模式(despi): 写命令用3w-9b, 写数据为两线模式多了D1/DC, 3w-9b-2line;
 #define MODE_4WIRE_8BIT                 2                                       //屏幕4线一通模式: 4线为SCLK CS D0 DC; 8bit为每次传输一个byte; 一通为一根数据线;

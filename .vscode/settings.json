@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "ute_project_config_abe012.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c"
+    }
+}

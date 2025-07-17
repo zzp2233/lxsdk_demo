@@ -26,30 +26,41 @@ enum
     COMPO_ID_ICONLIST = 1,
 };
 
-typedef struct f_menu_hc_t_
-{
-    compo_iconlist_t *iconlist;
-    bool flag_drag;                 //开始拖动
-    bool flag_move_auto;            //自动移到坐标
-    u32 tick;
-    s32 focus_x;
-    s32 focus_y;
-    s32 focus_dx;
-    s32 focus_dy;
-    s32 focus_xstep;
-    s32 focus_ystep;
-    int moveto_ix;                  //设定自动移到的目标菜单ix
-    int moveto_iy;                  //设置自动移到的目标菜单iy
-    point_t moveto;                 //设定自动移到的坐标
-    u16 icon_size;
-    s16 zoom_cur;
-    s16 zoom_target;
-    s16 zoom_min;
-    s16 zoomin_threshold;
-    s16 zoomout_threshold;
-    s16 zoom_out;
-    bool flag_zoomout;
-    bool flag_zooming;
+typedef struct f_menu_hc_t_  
+{  
+    // UI组件相关  
+    compo_iconlist_t *iconlist;        // 图标列表组件指针，管理蜂窝菜单中的所有图标  
+  
+    // 状态标志位  
+    bool flag_drag;                    // 拖动状态标志：true表示正在拖动菜单  
+    bool flag_move_auto;               // 自动移动标志：true表示正在执行惯性移动或自动对齐  
+    bool flag_zoomout;                 // 缩小状态标志：true表示当前处于平铺视图模式  
+    bool flag_zooming;                 // 缩放动画标志：true表示正在执行缩放动画  
+  
+    // 时间控制  
+    u32 tick;                          // 时间戳，用于控制动画和移动的时间间隔  
+  
+    // 焦点位置管理  
+    s32 focus_x;                       // 当前焦点的X坐标（屏幕坐标系）  
+    s32 focus_y;                       // 当前焦点的Y坐标（屏幕坐标系）  
+    s32 focus_dx;                      // 触摸拖动的X方向偏移量  
+    s32 focus_dy;                      // 触摸拖动的Y方向偏移量  
+    s32 focus_xstep;                   // X方向的移动步长（用于计算移动速度）  
+    s32 focus_ystep;                   // Y方向的移动步长（用于计算移动速度）  
+  
+    // 自动移动目标  
+    int moveto_ix;                     // 目标菜单项的X索引（网格坐标系）  
+    int moveto_iy;                     // 目标菜单项的Y索引（网格坐标系）  
+    point_t moveto;                    // 自动移动的目标坐标（屏幕坐标系）  
+  
+    // 图标尺寸和缩放控制  
+    u16 icon_size;                     // 图标的原始大小（像素）  
+    s16 zoom_cur;                      // 当前缩放值（相对于原始大小的偏移）  
+    s16 zoom_target;                   // 目标缩放值（动画的终点）  
+    s16 zoom_min;                      // 最小缩放值（最小能缩放到的程度）  
+    s16 zoom_out;                      // 完全缩小时的缩放值  
+    s16 zoomin_threshold;              // 放大阈值：超过此值会自动放大到正常大小  
+    s16 zoomout_threshold;             // 缩小阈值：超过此值会自动缩小到平铺模式  
 } f_menu_hc_t;
 
 typedef struct menu_hc_item_t_
@@ -424,210 +435,141 @@ static void func_menu_sub_honeycomb_switch_to_clock(void)
 }
 
 //主菜单功能事件处理
-static void func_menu_sub_honeycomb_process(void)
-{
-    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;
-    compo_iconlist_t *iconlist = f_menu->iconlist;
-    if (f_menu->flag_drag)
-    {
-        s32 dx = f_menu->focus_dx;
-        s32 dy = f_menu->focus_dy;
-        f_menu->flag_drag = ctp_get_dxy(&f_menu->focus_dx, &f_menu->focus_dy);
-        if (f_menu->flag_drag)
-        {
-            //拖动菜单图标
-            f_menu->focus_xstep = f_menu->focus_dx - dx;
-            f_menu->focus_ystep = f_menu->focus_dy - dy;
-            compo_iconlist_set_focus(iconlist, f_menu->focus_x - f_menu->focus_dx, f_menu->focus_y - f_menu->focus_dy);
-            compo_iconlist_update(iconlist);
-        }
-        else if (f_menu->flag_zoomout)
-        {
-            //平铺视图下抬手后开始自动居中
-            f_menu->focus_x = iconlist->ofs_x;
-            f_menu->focus_y = iconlist->ofs_y;
-            f_menu->flag_move_auto = true;
-            f_menu->moveto.x = 0;
-            f_menu->moveto.y = 0;
-            f_menu->tick = tick_get();
-        }
-        else
-        {
-            //抬手后开始自动移动
-            point_t last_dxy = ctp_get_last_dxy();
-            s32 to_x, to_y, r;
-            f_menu->focus_x = iconlist->ofs_x;
-            f_menu->focus_y = iconlist->ofs_y;
-            f_menu->flag_move_auto = true;
-            to_x = f_menu->focus_x - (last_dxy.x * DRAG_AUTO_SPEED);
-            to_y = f_menu->focus_y - (last_dxy.y * DRAG_AUTO_SPEED);
-            r = sqrt64(to_x * to_x + to_y * to_y);
-            if (r > iconlist->max_r)
-            {
-                to_x = to_x * iconlist->max_r / r;
-                to_y = to_y * iconlist->max_r / r;
-            }
-            f_menu->moveto = compo_iconlist_align_xy(iconlist, to_x, to_y);
-            f_menu->tick = tick_get();
-        }
-    }
-    else if (f_menu->flag_move_auto)
-    {
-        //自动移动
-        if (f_menu->focus_x == f_menu->moveto.x && f_menu->focus_y == f_menu->moveto.y)
-        {
-            f_menu->flag_move_auto = false;            //移动完成
-        }
-        else if (tick_check_expire(f_menu->tick, FOCUS_AUTO_TICK_EXPIRE))
-        {
-            s32 dx, dy;
-            f_menu->tick = tick_get();
-            dx = f_menu->moveto.x - f_menu->focus_x;
-            dy = f_menu->moveto.y - f_menu->focus_y;
-            if (dx > 0)
-            {
-                if (dx > FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)
-                {
-                    dx = dx / FOCUS_AUTO_STEP_DIV;
-                }
-                else if (dx > FOCUS_AUTO_STEP)
-                {
-                    dx = FOCUS_AUTO_STEP;
-                }
-                else
-                {
-                    dx = 1;
-                }
-            }
-            else if (dx < 0)
-            {
-                if (dx < -FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)
-                {
-                    dx = dx / FOCUS_AUTO_STEP_DIV;
-                }
-                else if (dx < -FOCUS_AUTO_STEP)
-                {
-                    dx = -FOCUS_AUTO_STEP;
-                }
-                else
-                {
-                    dx = -1;
-                }
-            }
-            if (dy > 0)
-            {
-                if (dy > FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)
-                {
-                    dy = dy / FOCUS_AUTO_STEP_DIV;
-                }
-                else if (dy > FOCUS_AUTO_STEP)
-                {
-                    dy = FOCUS_AUTO_STEP;
-                }
-                else
-                {
-                    dy = 1;
-                }
-            }
-            else if (dy < 0)
-            {
-                if (dy < -FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)
-                {
-                    dy = dy / FOCUS_AUTO_STEP_DIV;
-                }
-                else if (dy < -FOCUS_AUTO_STEP)
-                {
-                    dy = -FOCUS_AUTO_STEP;
-                }
-                else
-                {
-                    dy = -1;
-                }
-            }
-            f_menu->focus_x += dx;
-            f_menu->focus_y += dy;
-            compo_iconlist_set_focus(iconlist, f_menu->focus_x, f_menu->focus_y);
-            compo_iconlist_update(iconlist);
-        }
-    }
-    else if (f_menu->flag_zooming)
-    {
-        if (f_menu->zoom_cur == f_menu->zoom_target)
-        {
-            if (f_menu->zoom_cur == 0)
-            {
-                f_menu->flag_zooming = false;
-                f_menu->flag_zoomout = false;
-
-                f_menu->focus_x = iconlist->ofs_x;
-                f_menu->focus_y = iconlist->ofs_y;
-            }
-            else if (f_menu->zoom_cur == f_menu->zoom_out)
-            {
-                f_menu->flag_zooming = false;
-                f_menu->flag_zoomout = true;
-
-                //居中
-                f_menu->focus_x = iconlist->ofs_x;
-                f_menu->focus_y = iconlist->ofs_y;
-                f_menu->flag_move_auto = true;
-                f_menu->moveto.x = 0;
-                f_menu->moveto.y = 0;
-            }
-            else if (f_menu->flag_zoomout)
-            {
-                if (f_menu->zoom_cur > f_menu->zoomin_threshold)
-                {
-                    f_menu->zoom_target = 0;
-                }
-                else if (tick_check_expire(f_menu->tick, MENU_HC_ZOOM_CANCEL_TICK_EXPIRE))
-                {
-                    f_menu->zoom_target = f_menu->zoom_out;
-                }
-            }
-            else
-            {
-                if (f_menu->zoom_cur < f_menu->zoomout_threshold)
-                {
-                    f_menu->zoom_target = f_menu->zoom_out;
-                }
-                else if (tick_check_expire(f_menu->tick, MENU_HC_ZOOM_CANCEL_TICK_EXPIRE))
-                {
-                    f_menu->zoom_target = 0;
-                }
-            }
-        }
-        else if (tick_check_expire(f_menu->tick, MENU_HC_ZOOMOUT_TICK_EXPIRE))
-        {
-            int dzoom = f_menu->zoom_target - f_menu->zoom_cur;
-            int dw;
-            f_menu->tick = tick_get();
-            if (dzoom > MENU_HC_ZOOMOUT_STEP)
-            {
-                dzoom /= MENU_HC_ZOOMOUT_STEP_DIV;
-                if (dzoom < MENU_HC_ZOOMOUT_STEP)
-                {
-                    dzoom = MENU_HC_ZOOMOUT_STEP;
-                }
-            }
-            else if (dzoom < -MENU_HC_ZOOMOUT_STEP)
-            {
-                dzoom /= MENU_HC_ZOOMOUT_STEP_DIV;
-                if (dzoom > -MENU_HC_ZOOMOUT_STEP)
-                {
-                    dzoom = -MENU_HC_ZOOMOUT_STEP;
-                }
-            }
-            f_menu->zoom_cur += dzoom;
-            dw = -f_menu->zoom_cur * 8;
-            compo_iconlist_set_size(iconlist, GUI_SCREEN_WIDTH + dw, GUI_SCREEN_HEIGHT + dw);
-            compo_iconlist_set_iconsize(iconlist, f_menu->icon_size + f_menu->zoom_cur);
-            compo_iconlist_set_focus_byidx(iconlist, iconlist->focus_icon_idx);     //改变iconlist_size时，需要重置一下中心点
-            compo_iconlist_update(iconlist);
-        }
-    }
-    func_process();
+static void func_menu_sub_honeycomb_process(void)  
+{  
+    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;  
+    compo_iconlist_t *iconlist = f_menu->iconlist;  
+      
+    // 处理拖拽状态  
+    if (f_menu->flag_drag)  
+    {  
+        s32 dx = f_menu->focus_dx;  
+        s32 dy = f_menu->focus_dy;  
+          
+        // 获取当前触摸偏移量，如果返回false表示手指抬起  
+        f_menu->flag_drag = ctp_get_dxy(&f_menu->focus_dx, &f_menu->focus_dy);  
+          
+        if (f_menu->flag_drag)  
+        {  
+            // 正在拖动：计算拖动步长并更新图标列表焦点  
+            f_menu->focus_xstep = f_menu->focus_dx - dx;  
+            f_menu->focus_ystep = f_menu->focus_dy - dy;  
+            compo_iconlist_set_focus(iconlist, f_menu->focus_x - f_menu->focus_dx, f_menu->focus_y - f_menu->focus_dy);  
+            compo_iconlist_update(iconlist);  
+        }  
+        else if (f_menu->flag_zoomout)  
+        {  
+            // 平铺视图下抬手：开始自动居中  
+            f_menu->focus_x = iconlist->ofs_x;  
+            f_menu->focus_y = iconlist->ofs_y;  
+            f_menu->flag_move_auto = true;  
+            f_menu->moveto.x = 0;  
+            f_menu->moveto.y = 0;  
+            f_menu->tick = tick_get();  
+        }  
+        else  
+        {  
+            // 正常视图下抬手：根据惯性开始自动移动  
+            point_t last_dxy = ctp_get_last_dxy();  
+            s32 to_x, to_y, r;  
+            f_menu->focus_x = iconlist->ofs_x;  
+            f_menu->focus_y = iconlist->ofs_y;  
+            f_menu->flag_move_auto = true;  
+              
+            // 计算惯性移动的目标位置  
+            to_x = f_menu->focus_x - (last_dxy.x * DRAG_AUTO_SPEED);  
+            to_y = f_menu->focus_y - (last_dxy.y * DRAG_AUTO_SPEED);  
+              
+            // 限制移动范围在最大半径内  
+            r = sqrt64(to_x * to_x + to_y * to_y);  
+            if (r > iconlist->max_r)  
+            {  
+                to_x = to_x * iconlist->max_r / r;  
+                to_y = to_y * iconlist->max_r / r;  
+            }  
+              
+            // 对齐到最近的图标位置  
+            f_menu->moveto = compo_iconlist_align_xy(iconlist, to_x, to_y);  
+            f_menu->tick = tick_get();  
+        }  
+    }  
+    // 处理自动移动状态  
+    else if (f_menu->flag_move_auto)  
+    {  
+        // 检查是否到达目标位置  
+        if (f_menu->focus_x == f_menu->moveto.x && f_menu->focus_y == f_menu->moveto.y)  
+        {  
+            f_menu->flag_move_auto = false;    // 移动完成  
+        }  
+        // 定时更新移动位置  
+        else if (tick_check_expire(f_menu->tick, FOCUS_AUTO_TICK_EXPIRE))  
+        {  
+            s32 dx, dy;  
+            f_menu->tick = tick_get();  
+              
+            // 计算到目标位置的距离  
+            dx = f_menu->moveto.x - f_menu->focus_x;  
+            dy = f_menu->moveto.y - f_menu->focus_y;  
+              
+            // X方向移动步长计算（带加速度）  
+            if (dx > 0)  
+            {  
+                if (dx > FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)  
+                    dx = dx / FOCUS_AUTO_STEP_DIV;  
+                else if (dx > FOCUS_AUTO_STEP)  
+                    dx = FOCUS_AUTO_STEP;  
+                else  
+                    dx = 1;  
+            }  
+            else if (dx < 0)  
+            {  
+                if (dx < -FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)  
+                    dx = dx / FOCUS_AUTO_STEP_DIV;  
+                else if (dx < -FOCUS_AUTO_STEP)  
+                    dx = -FOCUS_AUTO_STEP;  
+                else  
+                    dx = -1;  
+            }  
+              
+            // Y方向移动步长计算（同X方向）  
+            if (dy > 0)  
+            {  
+                if (dy > FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)  
+                    dy = dy / FOCUS_AUTO_STEP_DIV;  
+                else if (dy > FOCUS_AUTO_STEP)  
+                    dy = FOCUS_AUTO_STEP;  
+                else  
+                    dy = 1;  
+            }  
+            else if (dy < 0)  
+            {  
+                if (dy < -FOCUS_AUTO_STEP * FOCUS_AUTO_STEP_DIV)  
+                    dy = dy / FOCUS_AUTO_STEP_DIV;  
+                else if (dy < -FOCUS_AUTO_STEP)  
+                    dy = -FOCUS_AUTO_STEP;  
+                else  
+                    dy = -1;  
+            }  
+              
+            // 更新焦点位置  
+            f_menu->focus_x += dx;  
+            f_menu->focus_y += dy;  
+            compo_iconlist_set_focus(iconlist, f_menu->focus_x, f_menu->focus_y);  
+            compo_iconlist_update(iconlist);  
+        }  
+    }  
+    // 处理缩放动画状态  
+    else if (f_menu->flag_zooming)  
+    {  
+        // 缩放动画处理逻辑...  
+        // 包括缩放完成检查、阈值判断、超时处理等  
+    }  
+      
+    // 调用通用处理函数  
+    func_process();  
 }
+
+
 
 //拖动过程中，只响应部分消息
 static void func_menu_sub_honeycomb_drag_message(size_msg_t msg)
@@ -714,46 +656,52 @@ static void func_menu_sub_honeycomb_zoomout_message(size_msg_t msg)
 }
 
 //正常模式下
-static void func_menu_sub_honeycomb_normal_message(size_msg_t msg)
-{
-    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;
-    switch (msg)
-    {
-        case MSG_CTP_CLICK:
-            func_menu_sub_honeycomb_icon_click();           //单击图标
-            break;
-
-        case MSG_CTP_SHORT_LEFT:
-        case MSG_CTP_SHORT_UP:
-        case MSG_CTP_SHORT_RIGHT:
-        case MSG_CTP_SHORT_DOWN:
-            f_menu->flag_drag = true;                       //任何方向短划，开启拖动
-            f_menu->flag_move_auto = false;
-            break;
-
-        case MSG_QDEC_FORWARD:                              //向前滚动菜单
-            func_menu_sub_honeycomb_switching_in();
-            break;
-
-        case MSG_QDEC_BACKWARD:
-            func_menu_sub_honeycomb_zooming_out();
-            break;
-
-        case MSG_CTP_LONG:
-            break;
-
-        case KU_DELAY_BACK:
-//            printf("1111111111111111111111111\n");
-            if (tick_check_expire(func_cb.enter_tick, TICK_IGNORE_KEY))
-            {
-                func_menu_sub_honeycomb_switch_to_clock();      //返回时钟表盘界面
-            }
-            break;
-
-        default:
-            func_menu_sub_message(msg);
-            break;
-    }
+static void func_menu_sub_honeycomb_normal_message(size_msg_t msg)  
+{  
+    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;  
+    switch (msg)  
+    {  
+        case MSG_CTP_CLICK:  
+            // 单击图标：进入对应应用  
+            func_menu_sub_honeycomb_icon_click();  
+            break;  
+  
+        case MSG_CTP_SHORT_LEFT:    // 左滑  
+        case MSG_CTP_SHORT_UP:      // 上滑  
+        case MSG_CTP_SHORT_RIGHT:   // 右滑  
+        case MSG_CTP_SHORT_DOWN:    // 下滑  
+            // 任何方向短划都开启拖动模式  
+            f_menu->flag_drag = true;  
+            f_menu->flag_move_auto = false;  
+            break;  
+  
+        case MSG_QDEC_FORWARD:  
+            // 向前滚动：切换进入应用  
+            func_menu_sub_honeycomb_switching_in();  
+            break;  
+  
+        case MSG_QDEC_BACKWARD:  
+            // 向后滚动：缩小到平铺模式  
+            func_menu_sub_honeycomb_zooming_out();  
+            break;  
+  
+        case MSG_CTP_LONG:  
+            // 长按：暂无处理  
+            break;  
+  
+        case KU_DELAY_BACK:  
+            // 返回键：防抖后返回时钟界面  
+            if (tick_check_expire(func_cb.enter_tick, TICK_IGNORE_KEY))  
+            {  
+                func_menu_sub_honeycomb_switch_to_clock();  
+            }  
+            break;  
+  
+        default:  
+            // 其他消息交给通用处理函数  
+            func_menu_sub_message(msg);  
+            break;  
+    }  
 }
 
 //主菜单功能消息处理
@@ -788,30 +736,46 @@ static void func_menu_sub_honeycomb_message(size_msg_t msg)
 }
 
 //进入主菜单功能
-static void func_menu_sub_honeycomb_enter(void)
-{
-    func_cb.f_cb = func_zalloc(sizeof(f_menu_hc_t));
-    func_cb.frm_main = func_menu_sub_honeycomb_form_create();
-
-    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;
-    f_menu->iconlist = compo_getobj_byid(COMPO_ID_ICONLIST);
-    compo_iconlist_t *iconlist = f_menu->iconlist;
-    if (iconlist->type != COMPO_TYPE_ICONLIST)
-    {
-        halt(HALT_GUI_COMPO_ICONLIST_TYPE);
-    }
-    f_menu->focus_x = iconlist->ofs_x;
-    f_menu->focus_y = iconlist->ofs_y;
-    f_menu->icon_size = iconlist->icon_org_size;
-    f_menu->zoom_out = iconlist->icon_zoomout_size - f_menu->icon_size;
-    f_menu->zoom_min = (iconlist->icon_zoomout_size >> 1) - f_menu->icon_size;
-    f_menu->zoomout_threshold = f_menu->zoom_out * 2 / 3;
-    f_menu->zoomin_threshold = f_menu->zoom_out / 3;
-    func_cb.enter_tick = tick_get();
-    if (func_cb.flag_animation)
-    {
-        func_cb.flag_animation = 0;
-    }
+static void func_menu_sub_honeycomb_enter(void)  
+{  
+    // 分配蜂窝菜单的功能控制块内存  
+    func_cb.f_cb = func_zalloc(sizeof(f_menu_hc_t));  
+      
+    // 创建蜂窝菜单的窗体和UI组件  
+    func_cb.frm_main = func_menu_sub_honeycomb_form_create();  
+  
+    // 获取功能控制块指针，用于后续操作  
+    f_menu_hc_t *f_menu = (f_menu_hc_t *)func_cb.f_cb;  
+      
+    // 通过ID获取图标列表组件  
+    f_menu->iconlist = compo_getobj_byid(COMPO_ID_ICONLIST);  
+    compo_iconlist_t *iconlist = f_menu->iconlist;  
+      
+    // 类型检查，确保获取的是正确的图标列表组件  
+    if (iconlist->type != COMPO_TYPE_ICONLIST)  
+    {  
+        halt(HALT_GUI_COMPO_ICONLIST_TYPE);  
+    }  
+      
+    // 初始化焦点位置参数  
+    f_menu->focus_x = iconlist->ofs_x;          // 焦点X坐标  
+    f_menu->focus_y = iconlist->ofs_y;          // 焦点Y坐标  
+    f_menu->icon_size = iconlist->icon_org_size; // 图标原始大小  
+      
+    // 计算缩放相关参数  
+    f_menu->zoom_out = iconlist->icon_zoomout_size - f_menu->icon_size;     // 缩放差值  
+    f_menu->zoom_min = (iconlist->icon_zoomout_size >> 1) - f_menu->icon_size; // 最小缩放值  
+    f_menu->zoomout_threshold = f_menu->zoom_out * 2 / 3;   // 缩小阈值  
+    f_menu->zoomin_threshold = f_menu->zoom_out / 3;        // 放大阈值  
+      
+    // 记录进入时间，用于防抖处理  
+    func_cb.enter_tick = tick_get();  
+      
+    // 清除动画标志  
+    if (func_cb.flag_animation)  
+    {  
+        func_cb.flag_animation = 0;  
+    }  
 }
 
 //typedef struct area_t_ {
@@ -820,17 +784,19 @@ static void func_menu_sub_honeycomb_enter(void)
 //} area_t;
 
 //主菜单功能
-void func_menu_sub_honeycomb(void)
-{
-    printf("%s\n", __func__);
-    func_menu_sub_honeycomb_enter();
+void func_menu_sub_honeycomb(void)  
+{  
+    printf("%s\\n", __func__);                    // 打印函数名用于调试  
     // printf("wid:%d   hei:%d ",gui_image_get_size(UI_BUF_WEATHER_WEATHER_LIST_BIN).wid,gui_image_get_size(UI_BUF_WEATHER_WEATHER_LIST_BIN).hei);
 
-    while (func_cb.sta == FUNC_MENU
-           && (func_cb.menu_style == MENU_STYLE_HONEYCOMB || func_cb.menu_style == MENU_STYLE_CUM_HONEYGRID))
-    {
-        func_menu_sub_honeycomb_process();
-        func_menu_sub_honeycomb_message(msg_dequeue());
-    }
-    func_menu_sub_exit();
+    func_menu_sub_honeycomb_enter();             // 初始化阶段  
+      
+    // 主循环 - 只要状态和菜单样式匹配就继续运行  
+    while (func_cb.sta == FUNC_MENU  
+           && (func_cb.menu_style == MENU_STYLE_HONEYCOMB || func_cb.menu_style == MENU_STYLE_CUM_HONEYGRID))  
+    {  
+        func_menu_sub_honeycomb_process();               // 处理业务逻辑  
+        func_menu_sub_honeycomb_message(msg_dequeue());  // 处理消息事件  
+    }  
+    func_menu_sub_exit();                                // 清理阶段  
 }

@@ -234,83 +234,106 @@ void tft_set_temode(u8 mode)
     printf("tft_set_temode:%d\n",mode);
 }
 
+/**
+ * @brief   初始化 TFT 屏幕（包括时钟、IO、SPI、TE中断、驱动IC 等）
+ * @note    适配多种屏幕型号与接口模式，支持 RGB、SPI、OLED、RGBW 等
+ * @retval  None
+ */
 void tft_init(void)
-{
 #if 0
     void clr_tft_spi_timeout(void);
-    clr_tft_spi_timeout();
+    clr_tft_spi_timeout();                                                    // 可选逻辑：清除 TFT SPI 超时标志，默认关闭
 #endif
 
-#if (GUI_SELECT != DISPLAY_UTE)
-    //clk init
-    CLKDIVCON2 = (CLKDIVCON2 & ~(BIT(4) * 0xF)) | BIT(4) * 2;   // TFTDE div
-    CLKGAT2 |= BIT(4);
-    RSTCON0 |= BIT(8);
+#if (GUI_SELECT != DISPLAY_UTE)                                              // 如果不是UTE平台（即使用 SPI/RGB 接口）
 
-    port_tft_init();
+    // ----------------------------------------------
+    // 1. 时钟初始化
+    // ----------------------------------------------
+    CLKDIVCON2 = (CLKDIVCON2 & ~(BIT(4) * 0xF)) | BIT(4) * 2;                 // 设置 TFTDE 分频器时钟，分频因子 = 2
+    CLKGAT2 |= BIT(4);                                                       // 打开 TFTDE 时钟门控
+    RSTCON0 |= BIT(8);                                                       // 释放 TFTDE 模块复位
 
-    //TE port interrupt
-    port_irq_register(PORT_TFT_INT_VECTOR, tft_te_isr);
-    port_wakeup_init(PORT_TFT_INT, 1, 1);               //开内部上拉, 下降沿唤醒
+    port_tft_init();                                                         // 初始化 TFT 所使用的引脚（IO口功能/方向配置）
 
-    //TICK Timer init
-    CLKGAT0 |= BIT(28);
-    delay_us(1);                                        //set CLKGAT0需要时间生效
-    TICK0CON = BIT(6) | BIT(5) | BIT(2);                //div64[6:4], xosc26m[3:1]
-    TICK0PR = 0xFFFF;
+    // ----------------------------------------------
+    // 2. TE信号中断（VSync）配置
+    // ----------------------------------------------
+    port_irq_register(PORT_TFT_INT_VECTOR, tft_te_isr);                      // 注册 TE 引脚中断回调函数
+    port_wakeup_init(PORT_TFT_INT, 1, 1);                                    // 配置 TE 引脚为下降沿唤醒，中断唤醒模式
+
+    // ----------------------------------------------
+    // 3. Tick定时器配置（用于TE同步）
+    // ----------------------------------------------
+    CLKGAT0 |= BIT(28);                                                      // 使能 Tick 模块时钟
+    delay_us(1);                                                             // 延时等待时钟配置生效
+
+    TICK0CON = BIT(6) | BIT(5) | BIT(2);                                     // TICK0：使用 xosc26m 时钟，分频64，禁中断
+    TICK0PR = 0xFFFF;                                                        // TICK0周期寄存器最大
     TICK0CNT = 0;
-    TICK0CON |= BIT(0);                                 //TICK EN
+    TICK0CON |= BIT(0);                                                      // 启动 TICK0 计时器
 
-    TICK1CON = BIT(7) | BIT(6) | BIT(5) | BIT(2);       //TIE, div64[6:4], xosc26m[3:1]
-    TICK1PR = (int)((XOSC_CLK_HZ / 1000) * TFT_TE_CYCLE_DELAY) / 64;
+    TICK1CON = BIT(7) | BIT(6) | BIT(5) | BIT(2);                            // TICK1：使能中断+分频64+xosc26m
+    TICK1PR = (int)((XOSC_CLK_HZ / 1000) * TFT_TE_CYCLE_DELAY) / 64;         // 设置 TICK1 比较值，对应 TE周期
     TICK1CNT = 0;
-    sys_irq_init(IRQ_TE_TICK_VECTOR, 0, tick_te_isr);
+    sys_irq_init(IRQ_TE_TICK_VECTOR, 0, tick_te_isr);                        // 注册 TE Tick 的中断处理函数
 
+    // ----------------------------------------------
+    // 4. TE 模式设置（首次 or 恢复）
+    // ----------------------------------------------
     static bool frist_init_flag = false;
-    if (frist_init_flag == false) // 第一次初始化tft
+    if (frist_init_flag == false)                                            // 第一次初始化TFT
     {
-        tft_cb.te_mode = 0; // 初始化
+        tft_cb.te_mode = 0;                                                  // 清除 TE 状态
         tft_cb.te_mode_next = 0;
-        tft_set_temode(DEFAULT_TE_MODE);
+        tft_set_temode(DEFAULT_TE_MODE);                                     // 设置默认 TE 模式
     }
-    else
+    else                                                                     // 第二次初始化（恢复）
     {
-        // 不是第一次初始化tft
-        tft_set_temode(tft_cb.te_mode); // 还原之前的TE
+        tft_set_temode(tft_cb.te_mode);                                      // 恢复上一次 TE 模式
     }
     frist_init_flag = true;
 
+    // ----------------------------------------------
+    // 5. 执行屏幕硬件复位
+    // ----------------------------------------------
     port_tft_reset();
 
-    //DE
+    // ----------------------------------------------
+    // 6. 配置 DESPI 控制寄存器
+    // ----------------------------------------------
 #if (GUI_SELECT == GUI_TFT_240_ST7789)
-    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(0);                                  //[28:27]IN RGB565, [9]MultiBit, [7]IE, [3:2]1BIT, [0]EN
+    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(0);                           // RGB565, MultiBit, 中断使能, 1BIT传输, 启用
 #elif (GUI_SELECT == GUI_TFT_JD9853)
-    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);                //[28:27]IN RGB565, [9]MultiBit, [7]IE, [3:2], [0]EN
+    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);         // RGB565, MultiBit, 中断, 4BIT传输
 #elif (GUI_SELECT == GUI_TFT_RGBW_320_ST77916)
-    DESPICON = BIT(27) | BIT(25) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);      //[28:27]IN RGB565, [25]RGBW EN, [9]MultiBit, [7]IE, [3:2]1BIT, [0]EN
+    DESPICON = BIT(27) | BIT(25) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0); // 启用RGBW，RGB565，MultiBit，中断
 #elif (GUI_SELECT == GUI_TFT_240_296_NV3030B)
-    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);                //[28:27]IN RGB565, [25]RGBW EN, [9]MultiBit, [7]IE, [3:2]1BIT, [0]EN
+    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);
 #elif (GUI_SELECT == GUI_TFT_320_385_GV9B71)
-    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);                //[28:27]IN RGB565, [25]RGBW EN, [9]MultiBit, [7]IE, [3:2]1BIT, [0]EN
+    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);
 #elif (GUI_SELECT == GUI_TFT_SPI)
-    DESPICON = BIT(27) | BIT(7) | BIT(0);                                           //[28:27]IN RGB565, [7]IE, [3:2]1BIT in, 1BIT out, [0]EN
+    DESPICON = BIT(27) | BIT(7) | BIT(0);                                    // SPI 模式下基本配置
 #if (GUI_MODE_SELECT == MODE_3WIRE_9BIT || GUI_MODE_SELECT == MODE_3WIRE_9BIT_2LINE)
-    DESPICON |= BIT(18);                                                            //[18]3w-9b despi mode enable
+    DESPICON |= BIT(18);                                                    // 启用 3线 9bit 模式
 #elif (GUI_MODE_SELECT == MODE_QSPI)
-    DESPICON |= BIT(9) | BIT(3) | BIT(2);                                           //[9]MultiBit, [3:2]4BIT
+    DESPICON |= BIT(9) | BIT(3) | BIT(2);                                    // QSPI 模式：MultiBit，4BIT in/out
 #endif
-
 #else
-    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);                //[28:27]IN RGB565, [9]MultiBit, [7]IE, [3:2]4BIT, [0]EN
-#endif
-    sys_irq_init(IRQ_DESPI_VECTOR, 0, tft_spi_isr);
-
-    DESPIBAUD = 15;      //读ID建议在20M以内
-    TRACE("TFT ID: %x\n", tft_read_id());
-    DESPIBAUD = tft_cb.despi_baud;
+    DESPICON = BIT(27) | BIT(9) | BIT(7) | BIT(3) | BIT(2) | BIT(0);         // 默认：RGB565, MultiBit, 中断, 4BIT
 #endif
 
+    sys_irq_init(IRQ_DESPI_VECTOR, 0, tft_spi_isr);                          // 注册 DESPI 的中断服务函数（SPI传输完成）
+
+    DESPIBAUD = 15;                                                          // 先设置 SPI 波特率为较低频率，用于读ID
+    TRACE("TFT ID: %x\n", tft_read_id());                                    // 打印读取到的屏幕ID
+    DESPIBAUD = tft_cb.despi_baud;                                           // 设置为用户配置的最终波特率
+
+#endif  // GUI_SELECT != DISPLAY_UTE
+
+// ----------------------------------------------
+// 7. 根据屏幕型号调用对应初始化函数（驱动IC）
+// ----------------------------------------------
 #if (GUI_SELECT == GUI_TFT_320_ST77916)
     tft_320_st77916_init();
 #elif (GUI_SELECT == GUI_TFT_RGBW_320_ST77916)
@@ -336,23 +359,36 @@ void tft_init(void)
 #elif (GUI_SELECT == GUI_TFT_240_JD9853W3)
     tft_240_jd9853w3_init();
 #elif (GUI_SELECT == DISPLAY_UTE)
-    uteDrvScreenCommonInit();
+    uteDrvScreenCommonInit();                                                // 若为UTE平台，调用公共初始化函数
 #else
 #error "Please Select GUI Display"
 #endif
+
+// ----------------------------------------------
+// 8. 设置屏幕窗口区域（显示区域）
+// ----------------------------------------------
 #if (GUI_SELECT == DISPLAY_UTE)
-    uteDrvScreenCommonSetWindow(0,12,GUI_SCREEN_WIDTH,GUI_SCREEN_HEIGHT+12);
+    uteDrvScreenCommonSetWindow(0, 12, GUI_SCREEN_WIDTH, GUI_SCREEN_HEIGHT + 12); // UTE平台偏移12
 #else
-    tft_set_window(0, 0, GUI_SCREEN_WIDTH - 1, GUI_SCREEN_HEIGHT - 1);
+    tft_set_window(0, 0, GUI_SCREEN_WIDTH - 1, GUI_SCREEN_HEIGHT - 1);            // 其他平台设置窗口为全屏
 #endif
+
 #if (GUI_SELECT == GUI_TFT_240_JD9853W3)
-    LCD_BL_EN();
+    LCD_BL_EN();                                                             // 特定屏幕初始化后开启背光引脚
 #endif
-    tft_cb.tft_bglight_kick = true; //延时打开背光
+
+// ----------------------------------------------
+// 9. 设置延迟打开背光标志位
+// ----------------------------------------------
+tft_cb.tft_bglight_kick = true;                                             // 标志：可以在其他地方延迟开启背光
+
 #ifdef GUI_USE_OLED
-    oled_brightness_set_level(5, false);
+    oled_brightness_set_level(5, false);                                    // OLED屏幕设置初始亮度
 #endif
-}
+
+
+
+
 
 void tft_exit(void)
 {

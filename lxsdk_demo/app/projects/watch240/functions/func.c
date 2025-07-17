@@ -16,8 +16,8 @@
 
 typedef struct func_t_
 {
-    int func_idx;
-    void *func;
+    int func_idx;//任务编号
+    void *func;  //指向任务函数的函数指针
 } func_t;
 
 extern void func_menu(void);
@@ -528,6 +528,7 @@ const func_t tbl_func_create[] =
     {FUNC_ECIG_VPAE_SUB,                    func_ecig_vpae_sub_form_create},
 };
 
+//任务入口表
 const func_t tbl_func_entry[] =
 {
     {FUNC_MENU,                         func_menu},                     //主菜单(蜂窝)
@@ -1715,49 +1716,56 @@ void func_exit(void)
 }
 
 AT(.text.func)
-void func_run(void)
-{
-    void (*func_entry)(void) = NULL;
-    printf("%s\n", __func__);
-    memset(func_cb.tbl_sort, 0, sizeof(func_cb.tbl_sort));
-    //默认跳转空白界面，具体开机跳转界面在uteApplicationCommonStartupSecond
-    func_cb.sta = FUNC_EMPTY;//FUNC_OTA_SUCC;//FUNC_OTA_MODE;//FUNC_CLOCK;//FUNC_OTA_UI_MODE;//FUNC_OTA_MODE;//;//
-    // 获取自定义排序
-    uteModuleGuiCommonGetScreenTblSort(func_cb.tbl_sort, &func_cb.sort_cnt);
-
-    task_stack_init();  //任务堆栈
-    latest_task_init(); //最近任务
-    sys_cb.sys_init_complete = true;
-    for (;;)
-    {
-        if(sys_cb.refresh_language_flag) //刷新语言
-        {
-            // printf("sta_old = %d\n", sys_cb.sta_old);
-//            func_switch_to(sys_cb.sta_old, 0);
-            func_cb.sta = sys_cb.sta_old;
-            sys_cb.refresh_language_flag = false;
-        }
-
-        func_enter();
-        for (int i = 0; i < FUNC_ENTRY_CNT; i++)
-        {
-            if (tbl_func_entry[i].func_idx == func_cb.sta)
-            {
-                task_stack_push(func_cb.sta);
-                latest_task_add(func_cb.sta);
-                func_entry = tbl_func_entry[i].func;
-                func_entry();
-                break;
-            }
-        }
-        if (func_cb.sta == FUNC_PWROFF)
-        {
-            func_pwroff(1);
-        }
-        if (func_cb.sta == FUNC_DEEPSLEEP)
-        {
-            func_deepsleep();
-        }
-        func_exit();
-    }
+void func_run(void)  
+{  
+    void (*func_entry)(void) = NULL;                    // 函数指针，用于存储当前要执行的功能入口函数  
+    printf("%s\\n", __func__);  
+    memset(func_cb.tbl_sort, 0, sizeof(func_cb.tbl_sort));  // 清空功能排序表  
+      
+    // 默认跳转空白界面，具体开机跳转界面在uteApplicationCommonStartupSecond中设置  
+    func_cb.sta = FUNC_EMPTY;  
+      
+    // 获取自定义的屏幕排序配置  
+    uteModuleGuiCommonGetScreenTblSort(func_cb.tbl_sort, &func_cb.sort_cnt);  
+  
+    task_stack_init();                                  // 初始化任务堆栈管理  
+    latest_task_init();                                 // 初始化最近任务列表  
+    sys_cb.sys_init_complete = true;                    // 标记系统初始化完成  
+      
+    for (;;)                                           // 主循环 - 永不退出  
+    {  
+        // 处理语言切换请求  
+        if(sys_cb.refresh_language_flag)  
+        {  
+            func_cb.sta = sys_cb.sta_old;              // 恢复到切换前的状态  
+            sys_cb.refresh_language_flag = false;  
+        }  
+  
+        func_enter();                                   // 功能进入前的准备工作  
+          
+        // 遍历功能入口表，查找当前状态对应的功能函数  
+        for (int i = 0; i < FUNC_ENTRY_CNT; i++)  
+        {  
+            if (tbl_func_entry[i].func_idx == func_cb.sta)  
+            {  
+                task_stack_push(func_cb.sta);          // 将当前任务压入堆栈  
+                latest_task_add(func_cb.sta);          // 添加到最近任务列表  
+                func_entry = tbl_func_entry[i].func;   // 获取功能入口函数  
+                func_entry();                          // 执行功能函数  
+                break;  
+            }  
+        }  
+          
+        // 处理特殊状态  
+        if (func_cb.sta == FUNC_PWROFF)  
+        {  
+            func_pwroff(1);                            // 执行关机流程  
+        }  
+        if (func_cb.sta == FUNC_DEEPSLEEP)  
+        {  
+            func_deepsleep();                          // 执行深度睡眠  
+        }  
+          
+        func_exit();                                   // 功能退出后的清理工作  
+    }  
 }

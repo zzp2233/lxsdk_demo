@@ -67,9 +67,9 @@ void tft_write_end()
 AT(.com_text.tft_spi)
 void tft_write_cmd(u8 cmd)
 {
-    TFT_SPI_CS_DIS();
-    delay_us(1);
-    TFT_SPI_CS_EN();
+    TFT_SPI_CS_DIS();                     // 先拉高 CS，避免干扰
+    delay_us(1);                          // 确保时序稳定
+    TFT_SPI_CS_EN();                      // 重新拉低 CS 开始传输
 #if (GUI_MODE_SELECT == MODE_3WIRE_9BIT)
     DC_CMD_EN();
     tft_spi_sendbyte(cmd);
@@ -80,30 +80,32 @@ void tft_write_cmd(u8 cmd)
     DC_CMD_EN();
     tft_spi_sendbyte(cmd);
 #elif (GUI_MODE_SELECT == MODE_QSPI)
-    DESPICON &= ~BIT(3);                        //1BIT
-    tft_spi_sendbyte(0x02);
-    tft_spi_sendbyte(0x00);
-    tft_spi_sendbyte(cmd);
-    tft_spi_sendbyte(0x00);
+    // QSPI 模式下，写命令需先使用 1bit 传输控制字节
+    DESPICON &= ~BIT(3);                  // [3] 清零，切换为 1bit 模式
+    tft_spi_sendbyte(0x02);               // 写命令控制字 (0x02)
+    tft_spi_sendbyte(0x00);               // 空地址位
+    tft_spi_sendbyte(cmd);                // 实际要发送的命令
+    tft_spi_sendbyte(0x00);               // 空周期
 #endif
 }
 
 #if (GUI_MODE_SELECT == MODE_QSPI)
-//0x12: 1CMD 4ADDR 4DATA
+// 0x12：1 个命令 + 4 字节地址 + 4 字节数据
 AT(.com_text.tft_spi)
 void tft_write_cmd12(u8 cmd)
 {
     TFT_SPI_CS_DIS();
     delay_us(1);
     TFT_SPI_CS_EN();
-    DESPICON &= ~BIT(3);                        //1BIT
-    tft_spi_sendbyte(0x12);
-    DESPICON |= BIT(3);                         //4BIT
-    tft_spi_sendbyte(0x00);
-    tft_spi_sendbyte(cmd);
-    tft_spi_sendbyte(0x00);
+    DESPICON &= ~BIT(3);                  // 单线发送控制字
+    tft_spi_sendbyte(0x12);               // 特殊写命令
+    DESPICON |= BIT(3);                   // 恢复为 4bit 模式
+    tft_spi_sendbyte(0x00);               // 地址 0
+    tft_spi_sendbyte(cmd);                // 写入命令
+    tft_spi_sendbyte(0x00);               // 空周期
 }
 #endif
+
 
 AT(.com_text.tft_spi)
 void tft_write_data(u8 data)
@@ -124,6 +126,8 @@ void tft_write_data(u8 data)
     tft_spi_sendbyte(data);
     TFT_SPI_CS_DIS();
 #elif (GUI_MODE_SELECT == MODE_QSPI)
+    // QSPI 模式下，此时 DESPICON 已经处于 4bit 状态
+    // 直接发送数据即可
     tft_spi_sendbyte(data);
 #endif
 }
@@ -143,11 +147,12 @@ void tft_read_cmd(u8 cmd)
     DC_CMD_EN();
     tft_spi_sendbyte(cmd);
 #elif (GUI_MODE_SELECT == MODE_QSPI)
-    DESPICON = (DESPICON & ~(3<<2)) | ((0x1)<<2); //[3:2]1BIT in/out
-    tft_spi_sendbyte(0x03);
-    tft_spi_sendbyte(0x00);
-    tft_spi_sendbyte(cmd);
-    tft_spi_sendbyte(0x00);
+    // 设置为 1bit 输入输出模式
+    DESPICON = (DESPICON & ~(3 << 2)) | (0x1 << 2);   // [3:2] = 01
+    tft_spi_sendbyte(0x03);       // 读命令控制字
+    tft_spi_sendbyte(0x00);       // 地址 0
+    tft_spi_sendbyte(cmd);        // 要读取的寄存器
+    tft_spi_sendbyte(0x00);       // 空周期
 #else
     tft_spi_sendbyte(cmd);
 #endif

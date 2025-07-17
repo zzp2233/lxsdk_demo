@@ -14,9 +14,9 @@
  **/
 typedef struct
 {
-    u8 func_sta;
-    u32 res_addr;
-    u32 str_idx;
+    u8 func_sta;  //任务项id
+    u32 res_addr; //图标资源
+    u32 str_idx;  //标题序号信息
 } func_item_info_t;
 
 #if GUI_SCREEN_SIZE_240X284RGB_I330001_SUPPORT

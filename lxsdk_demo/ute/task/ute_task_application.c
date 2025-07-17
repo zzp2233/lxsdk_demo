@@ -83,23 +83,33 @@ bool uteTaskApplicationSendMsg(ute_task_application_message_t *pMsg)
 *@author       zn.zeng
 *@date       2023-03-25
 */
-void uteTaskApplicationInit(void)
-{
-    uteTaskApplicationMsgQueueHandle = os_mq_create("ute_msg", sizeof(ute_task_application_message_t), UTE_TASK_APPLICATION_MESSAGE_MAX_CNT, OS_IPC_FLAG_FIFO);
-    uteTaskApplicationHandle = os_thread_create(
-                                   "ute",
-                                   uteTaskApplicationMain,
-                                   0,
-                                   UTE_TASK_APPLICATION_STACK_SIZE,
-                                   UTE_TASK_APPLICATION_PRIORITY,
-                                   -1);
-    if (uteTaskApplicationHandle != 0)
-    {
-        UTE_MODULE_LOG(UTE_LOG_SYSTEM_LVL,"%s,startup ute app thread",__func__);
-        os_thread_startup(uteTaskApplicationHandle);
-    }
+void uteTaskApplicationInit(void)  
+{  
+    // 创建消息队列，用于任务间通信  
+    // 参数：队列名称、消息大小、最大消息数量、FIFO模式  
+    uteTaskApplicationMsgQueueHandle = os_mq_create("ute_msg",   
+                                                   sizeof(ute_task_application_message_t),   
+                                                   UTE_TASK_APPLICATION_MESSAGE_MAX_CNT,   
+                                                   OS_IPC_FLAG_FIFO);  
+      
+    // 创建UTE应用主线程  
+    // 参数：线程名称、入口函数、参数、栈大小、优先级、时间片  
+    uteTaskApplicationHandle = os_thread_create("ute",  
+                                               uteTaskApplicationMain,  // 线程入口函数  
+                                               0,                       // 传递给线程的参数  
+                                               UTE_TASK_APPLICATION_STACK_SIZE,    // 栈大小  
+                                               UTE_TASK_APPLICATION_PRIORITY,      // 线程优先级  
+                                               -1);                     // 时间片(-1表示默认)  
+      
+    // 检查线程创建是否成功  
+    if (uteTaskApplicationHandle != 0)  
+    {  
+        // 打印日志信息  
+        UTE_MODULE_LOG(UTE_LOG_SYSTEM_LVL,"%s,startup ute app thread",__func__);  
+        // 启动线程，将其加入调度器  
+        os_thread_startup(uteTaskApplicationHandle);  
+    }  
 }
-
 #else
 
 #define UTE_TASK_APPLICATION_PRIORITY             24
