@@ -27,7 +27,8 @@ class AsyncWorker(QThread):
             if not self.make_word_list(self.xls, languageIDX, languageID, languageDes, self.langList):
                 return
 
-            self.showLog.emit("proc: {} end.".format({lang["name"]}))
+            # use the language name directly when reporting progress
+            self.showLog.emit("proc: {} end.".format(lang["name"]))
             self.step.emit(self.progress)
             print(ConvertExcel2CHeader.lastErrInfo)
 
