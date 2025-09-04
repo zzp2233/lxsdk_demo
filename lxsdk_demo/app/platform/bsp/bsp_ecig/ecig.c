@@ -58,13 +58,36 @@ void ecig_mic_io_init(void)
     }
 }
 
+//函数返回1表示检测到烟弹，返回0表示未检测到
+/*
+ecig -                      全局的电子烟控制结构体，在 app/platform/bsp/bsp_ecig/ecig.c:21 中定义为 ecig_cb_t ecig;
+ecig.cfg -                  指向电子烟配置结构体的指针
+ecig_gpio[ECIG_DET1_IO] -   GPIO配置数组，ECIG_DET1_IO 是数组索引，表示第一路检测IO
+.sfr -                      这是 gpio_t 结构体中的成员，在 app/platform/libs/api_gpio.h:21-27 中定义：
 
+ecig.cfg->ecig_gpio[ECIG_DET1_IO].sfr[GPIOx]
+sfr[GPIOx] - 访问GPIO数据寄存器，GPIOx 在 app/platform/libs/api_gpio.h:8 中定义为枚举值2
+这个寄存器包含了该GPIO端口所有引脚的当前电平状态
+
+BIT(ecig.cfg->ecig_gpio[ECIG_DET1_IO].num)
+num 是具体的引脚号（0-7）
+BIT(num) 创建一个只有第num位为1的掩码
+
+& BIT(...)
+按位与操作，提取出指定引脚的电平状态
+
+>> ecig.cfg->ecig_gpio[ECIG_DET1_IO].num
+右移操作，将提取的位移到最低位，得到0或1
+
+!()
+逻辑取反，将GPIO的高电平(1)转换为函数返回值0，低电平(0)转换为返回值1
+*/
 AT(.com_text.ecig.init)
 uint8_t det1_start_or_not(void)
 {
     //gpio_t gpio;
     //gpio_cfg_init(&gpio, ecig.cfg->io_hot_det1);
-    if (ecig.cfg->ecig_gpio[ECIG_DET1_IO].sfr)
+    if (ecig.cfg->ecig_gpio[ECIG_DET1_IO].sfr)//检查GPIO是否已初始化
     {
         return !((ecig.cfg->ecig_gpio[ECIG_DET1_IO].sfr[GPIOx] & BIT(ecig.cfg->ecig_gpio[ECIG_DET1_IO].num)) >> ecig.cfg->ecig_gpio[ECIG_DET1_IO].num);
     }

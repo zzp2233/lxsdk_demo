@@ -1,3 +1,10 @@
+/*
+ * @brief: 
+ * @LastEditors: ljf
+ * @LastEditTime: 2025-07-29 14:15:57
+ * @FilePath: \lxsdk_demo\app\platform\libs\api_gpio.h
+ * @Date: 2025-07-09 16:08:07
+ */
 #ifndef _BSP_GPIO_H
 #define _BSP_GPIO_H
 
@@ -20,9 +27,9 @@ enum
 
 typedef struct
 {
-    psfr_t sfr;                                             //GPIO SFR ADDR
-    u8 num;
-    u8 type;                                                //type = 1, 没有300R的强上下拉电阻。 type = 0, 普通IO, 有内部300R上下拉电阻。
+    psfr_t sfr;         // GPIO 寄存器基址
+    u8 num;             // 引脚编号
+    u8 type;            // type=1 表示无 300Ω 上下拉电阻，type=0 为普通 IO（带 300Ω）
     u16 pin;
 } gpio_t;
 

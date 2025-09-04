@@ -229,21 +229,21 @@ enum
 //task control block
 typedef struct
 {
-    void *f_cb;                                     //当前任务控制指针
-    compo_form_t *frm_main;                         //当前窗体
-    void *msg_cb;                                   //对话框控制指针
-    u32 enter_tick;                                 //记录进入func的tick
-    u8 sta;                                         //cur working task number
-    u8 last;                                        //lask task number
-    u8 menu_style;                                  //菜单样式
-    u8 menu_idx;                                    //菜单编号
-    int32_t menu_idx_angle;                         //菜单编号角度
-    u8 sta_break;                                   //被中断的任务
+    void *f_cb;                                     //当前任务控制指针,指向当前功能的私有数据结构
+    compo_form_t *frm_main;                         //当前窗体,当前显示界面的窗体指针
+    void *msg_cb;                                   //对话框控制指针,指向当前显示的对话框控制结构，用于管理弹窗和提示信息
+    u32 enter_tick;                                 //记录进入func的tick,记录进入当前功能的时间，用于防抖和超时处理
+    u8 sta;                                         //当前工作任务编号,决定当前运行哪个功能
+    u8 last;                                        //记录上一个运行的功能，用于返回操作。在功能退出时会设置
+    u8 menu_style;                                  //菜单样式,系统根据这个值选择不同的菜单样式（蜂窝、瀑布流、九宫格等）
+    u8 menu_idx;                                    //菜单编号,记录当前菜单中选中的图标索引。在菜单切换时会更新
+    int32_t menu_idx_angle;                         //菜单编号角度,用于圆形菜单等需要角度信息的界面，记录当前选中项的角度位置
+    u8 sta_break;                                   //被中断的任务,当有紧急事件（如来电）中断当前功能时，记录被中断的任务编号，以便后续恢复。
     u8 sort_cnt;                                    //快捷任务个数
-    u8 tbl_sort[MAX_FUNC_SORT_CNT];                 //快捷任务表
+    u8 tbl_sort[MAX_FUNC_SORT_CNT];                 //快捷任务表,包含了所有可以左右滑动切换的界面顺序
     u16 left_sta;                                   //CLOCK左边菜单
-    u8 msgbox_enter_sta;                            //弹窗进入之前的界面任务
-    u8  flag_sort       : 1,                        //已进入快捷任务
+    u8 msgbox_enter_sta;                            //弹窗进入之前的界面任务,记录弹出对话框前的界面状态，用于对话框关闭后的恢复。
+    u8  flag_sort       : 1,                        //控制是否启用快捷切换模式
     flag_animation  : 1;                        //入场动画
 
 
