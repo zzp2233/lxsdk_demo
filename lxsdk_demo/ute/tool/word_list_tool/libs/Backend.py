@@ -48,7 +48,8 @@ class Backend(QObject):
 
     @pyqtSlot(str, bool)
     def checkBox(self, idc, checked):
-        print("{1} {2}", idc, checked)
+        # use formatted string to show checkbox status
+        print(f"{idc} {checked}")
 
     @pyqtSlot(float)
     def on_progress(self, progress):
@@ -67,8 +68,8 @@ class Backend(QObject):
         self.clearLog = True
         # 反序列化JSON字符串为Python字典
         data = json.loads(json_data, parse_int=int, parse_float=float)
-        # 在控制台输出Python字典对象
-        print("path:{1} genDct:{2}", data["base"]["path"])
+        # Output the parsed path for debugging
+        print(f"path:{data['base']['path']}")
 
         lang_list = data["lang"]
         lang_enable_list = []
